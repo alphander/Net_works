@@ -2,14 +2,10 @@ package com.alphander.networks.runtime.unsupervised.pg;
 
 import java.awt.Color;
 
-import com.alphander.networks.environment.environments.Cartpole;
-import com.alphander.networks.network.activation.activators.LeakyReLU;
-import com.alphander.networks.network.activation.activators.Linear;
+import com.alphander.networks.environment.environments.Cartpole.Cartpole;
 import com.alphander.networks.network.activation.activators.ReLU;
 import com.alphander.networks.network.activation.activators.Sigmoid;
 import com.alphander.networks.network.activation.activators.SoftMax;
-import com.alphander.networks.network.activation.activators.Swish;
-import com.alphander.networks.network.activation.activators.Tanh;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.loss.lossfunctions.NoLoss;
 import com.alphander.networks.reinforce.pg.PGAgent;

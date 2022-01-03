@@ -2,7 +2,7 @@ package com.alphander.networks.runtime.unsupervised.pg;
 
 import java.awt.Color;
 
-import com.alphander.networks.environment.environments.Pendulum;
+import com.alphander.networks.environment.environments.Pendulum.Pendulum;
 import com.alphander.networks.network.activation.activators.Linear;
 import com.alphander.networks.network.activation.activators.ReLU;
 import com.alphander.networks.network.activation.activators.SoftMax;

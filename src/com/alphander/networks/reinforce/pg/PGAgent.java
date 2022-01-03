@@ -71,7 +71,6 @@ public class PGAgent
 	public void learn()
 	{	
 		NetArray advantage = rewards.discounted(gamma, dones);
-
 		
 		for(int e = 0; e < epochs; e++)
 		{

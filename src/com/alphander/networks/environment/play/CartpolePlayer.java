@@ -3,7 +3,7 @@ package com.alphander.networks.environment.play;
 
 import java.awt.event.KeyEvent;
 
-import com.alphander.networks.environment.environments.Cartpole;
+import com.alphander.networks.environment.environments.Cartpole.Cartpole;
 
 public class CartpolePlayer
 {

@@ -4,7 +4,6 @@ import com.alphander.networks.utils.NetArray;
 
 public interface Network
 {
-	
 	public NetArray run(NetArray in);
 	public NetArray getInput();
 	public NetArray getOutput();

@@ -29,7 +29,6 @@ public class DeepNet implements Network, Cloneable
 	private float[] input;
 	
 	//Setup and constructors
-	
 	public DeepNet(int[] size)//Non specific
 	{	
 		setup(size, new Tanh(), new MSE());

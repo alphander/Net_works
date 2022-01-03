@@ -2,7 +2,7 @@ package com.alphander.networks.environment.play;
 
 import java.awt.event.KeyEvent;
 
-import com.alphander.networks.environment.environments.Pendulum;
+import com.alphander.networks.environment.environments.Pendulum.Pendulum;
 
 public class PendulumPlayer
 {
