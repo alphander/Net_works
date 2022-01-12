@@ -1,4 +1,4 @@
-package com.alphander.networks.environment.environments.Pendulum;
+package com.alphander.networks.environment.environments.pendulum;
 
 import javax.swing.JFrame;
 import com.alphander.networks.environment.Environment;
@@ -30,6 +30,8 @@ public class Pendulum extends Environment
 	public Pendulum()
 	{
 		reset();
+		observationSpace = 2;
+		actionSpace = 2;
 	}
 	@Override
 	public void setAction(NetArray action)

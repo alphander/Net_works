@@ -1,4 +1,4 @@
-package com.alphander.networks.runtime.supervised;
+package com.alphander.networks.runtime.supervised.DeepNet;
 
 import java.awt.Color;
 

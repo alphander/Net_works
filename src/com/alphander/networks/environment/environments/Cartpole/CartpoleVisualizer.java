@@ -1,4 +1,4 @@
-package com.alphander.networks.environment.environments.Cartpole;
+package com.alphander.networks.environment.environments.cartpole;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

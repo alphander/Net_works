@@ -11,6 +11,9 @@ public abstract class Environment
 	public abstract NetArray getState();
 	public abstract void reset();
 	
+	public int observationSpace = 0;
+	public int actionSpace = 0;
+	
 	public float getReward()
 	{
 		return reward;

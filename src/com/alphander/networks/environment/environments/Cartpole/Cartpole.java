@@ -1,4 +1,4 @@
- package com.alphander.networks.environment.environments.Cartpole;
+ package com.alphander.networks.environment.environments.cartpole;
 
 import javax.swing.JFrame;
 import com.alphander.networks.environment.Environment;
@@ -39,6 +39,8 @@ public class Cartpole extends Environment
     public Cartpole()
     {
     	reset();
+    	observationSpace = 4;
+    	actionSpace = 2;
     }
     @Override
 	public void setAction(NetArray action)

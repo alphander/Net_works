@@ -265,7 +265,6 @@ public class NetArray implements Iterable<Float>, Cloneable
 			else
 				out[i] = val;
 		}
-		
 		return new NetArray(out);
 	}
 	
@@ -342,11 +341,11 @@ public class NetArray implements Iterable<Float>, Cloneable
 		for(int i = 0; i < length(); i++)
 		{
 			float Gt = 0;
-			float pw = 0;
+			float y = 1;
 			for(int j = i; j < length(); j++)
 			{
-				Gt += Math.pow(gamma, pw) * get(j) * dones.get(j);
-				pw++;
+				Gt += y * get(j) * dones.get(j);
+				y *= gamma;
 			}
 			discounted[i] = Gt;
 		}

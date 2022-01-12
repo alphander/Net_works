@@ -2,9 +2,8 @@ package com.alphander.networks.runtime.unsupervised.pg;
 
 import java.awt.Color;
 
-import com.alphander.networks.environment.environments.Pendulum.Pendulum;
+import com.alphander.networks.environment.environments.pendulum.Pendulum;
 import com.alphander.networks.network.activation.activators.Linear;
-import com.alphander.networks.network.activation.activators.ReLU;
 import com.alphander.networks.network.activation.activators.SoftMax;
 import com.alphander.networks.network.activation.activators.Swish;
 import com.alphander.networks.network.activation.activators.Tanh;
@@ -21,7 +20,7 @@ public class PGPendulumDemo
 	{	
 		Pendulum env = new Pendulum();
 
-		DeepNet actor = new DeepNet(new int[] {2, 32, 64, 32, 16, 16, 2});
+		DeepNet actor = new DeepNet(new int[] {env.observationSpace, 32, 64, 32, 16, 16, env.actionSpace});
 		actor.stepWeights = 0.0033f;
 		actor.stepBiases = 0.00033f;
 		actor.lossFunction = new NoLoss();
@@ -44,20 +43,18 @@ public class PGPendulumDemo
 		float latestReward = 0f;
 		for(int i = 0; i < iter; i++)
 		{
-			for(int j = 0; j < 4; j++)
+			agent.testEnvironment(2);
+			latestReward = agent.totalReward;
+			totalReward.append(agent.totalReward);
+			
+			if(totalReward.length() > 10)
 			{
-				agent.testEnvironment(0);
-				latestReward = agent.totalReward;
-				totalReward.append(agent.totalReward);
-				
-				if(totalReward.length() > 10)
-				{
-					graph.addData(totalReward.mean());
-					totalReward.remove(0);
-				}
+				graph.addData(totalReward.mean());
+				totalReward.remove(0);
 			}
 			
-			agent.learn();
+			if(iter % 4 == 0)
+				agent.learn();
 			System.out.println(i + " ---------------------------------------------------------- " + latestReward);
 		}
 		

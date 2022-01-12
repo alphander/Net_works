@@ -43,7 +43,7 @@ public class Layer
 				weights[i][j] = (float) (Math.random() - 0.5);
 	}
 	
-	public float[] forward(float[] input)
+	float[] forward(float[] input)
 	{
 		this.input = input;
 		for (int i = 0; i < outSize; i++)
@@ -58,13 +58,13 @@ public class Layer
 		return output;
 	}
 	
-	public void clear()
+	void clear()
 	{
 		Arrays.fill(input, 0f);
 		Arrays.fill(output, 0f);
 	}
 	
-	public void backward(float[] frontError)
+	void backward(float[] frontError)
 	{
 		Arrays.fill(error, 0f);
 		
@@ -83,7 +83,7 @@ public class Layer
 		}
 	}
 	
-	public void step(int batchSize)
+	void step(int batchSize)
 	{
 		for(int i = 0; i < outSize; i++)
 		{
@@ -96,14 +96,15 @@ public class Layer
 		}
 	}
 	
-	public void clearGradients()
+	void clearGradients()
 	{
 		Arrays.fill(biasesGrad, 0f);
 		for(int j = 0; j < inSize; j++)
             Arrays.fill(weightsGrad[j], 0f);
 	}
+
 	@Override
-	public Layer clone()
+	protected Layer clone()
 	{
 		Layer layer = new Layer(inSize, outSize, network, activator);
 		layer.input = input.clone();

@@ -1,10 +1,10 @@
-package com.alphander.networks.runtime.supervised;
+package com.alphander.networks.runtime.supervised.DeepNet;
 
 import java.awt.Color;
 import java.util.Arrays;
 
 import com.alphander.networks.environment.Environment;
-import com.alphander.networks.environment.environments.Pendulum.Pendulum;
+import com.alphander.networks.environment.environments.pendulum.Pendulum;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;

@@ -1,4 +1,4 @@
-package com.alphander.networks.runtime.supervised;
+package com.alphander.networks.runtime.supervised.DeepNet;
 
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.utils.NetArray;

@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 import com.alphander.networks.environment.Environment;
 import com.alphander.networks.network.deepnet.DeepNet;
+import com.alphander.networks.reinforce.Agent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
 
-public class PGAgent
+public class PGAgent extends Agent
 {
 	//Policy Gradient Agent
-	public DeepNet actor;
 	public Environment env;
+	public DeepNet actor;
 	private int actionSpace;
 	private int observationSpace;
 
@@ -39,14 +40,15 @@ public class PGAgent
 		actionSpace = actor.getOutput().length();
 		observationSpace = actor.getInput().length();
 	}
-
+	
+	@Override
 	public void testEnvironment(int delay)
 	{
 		while(env.getDone() != 0)
 		{
 			NetArray state = env.getState();
 			NetArray probability = actor.run(state);
-			int action = probability.add(new NetArray(actionSpace).gaussianNoise(random).sumZero()).sampleDiscrete();
+			int action = (int) probability.add(new NetArray(actionSpace).noise(random).sumZero()).sampleDiscrete();
 
 			//int action = new NetArray(actionSpace).noise(random).clip(0f, 1f).softMax().sampleDiscrete();
 
@@ -67,11 +69,11 @@ public class PGAgent
 		}
 		env.reset();
 	}
-
+	
+	@Override
 	public void learn()
 	{	
 		NetArray advantage = rewards.discounted(gamma, dones);
-		
 		for(int e = 0; e < epochs; e++)
 		{
 			NetArray losses = new NetArray();

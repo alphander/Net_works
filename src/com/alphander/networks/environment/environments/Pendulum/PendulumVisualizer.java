@@ -1,4 +1,4 @@
-package com.alphander.networks.environment.environments.Pendulum;
+package com.alphander.networks.environment.environments.pendulum;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
