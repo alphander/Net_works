@@ -25,19 +25,26 @@ public class Topology
 		this.inputDims = genome.inputDims;
 		this.outputDims = genome.outputDims;
 		this.activator = activator;
-		//build(genome);
+		build(genome);
 	}
 	
 	public float[] forward(float[] in)
 	{
-		Arrays.fill(values, 0.0f);
+		Arrays.fill(values, 0f);
+		for(int i = 0; i < in.length; i++)
+			this.values[i] = in[i];
+		
 		for(int node : order)
-			for(int input : network[node])
+		{
+			int[] inputs = network[node];
+			for(int i = 0; i < inputs.length; i++)
 			{
-				float weight = weights[node][input];
+				int input = inputs[i];
+				float weight = weights[node][i];
 				float value = values[input];
 				values[node] += activator.activator(value * weight);
 			}
+		}
 		float[] output = new float[outputDims];
 		for(int i = 0; i < outputDims; i++)
 			output[i] = values[i + inputDims];
@@ -65,17 +72,17 @@ public class Topology
         	inputs[i] = new HashSet<Integer>();
         
         ArrayDeque<Integer> next = new ArrayDeque<Integer>(); //Smart way of determining who's next to be checked.
+        ArrayDeque<Integer> ordered = new ArrayDeque<Integer>();
         int[] nodes = new int[numNodes];
-        int[] order = new int[numNodes];
-        int index = numNodes - 1;
         
-        for(int i = inputDims; i < outputDims; i++) next.add(i);//Adding outputs first.
+        for(int i = inputDims; i < inputDims + outputDims; i++) next.addLast(i);//Adding outputs first.
         
         while(!next.isEmpty())//Explore and evaluate distance.
 		{
 			int node = next.peekFirst();
-			order[index] = node;
-			
+			if(ordered.contains(node))
+				ordered.remove(node);
+			ordered.addFirst(node);
 			int d = nodes[node] + 1;
 			for(int n : adjacent[node])
 				if(nodes[n] <= d && !inputs[n].contains(node))
@@ -89,7 +96,6 @@ public class Topology
         
         int[][] network = new int[numNodes][];
         float[][] weights = new float[numNodes][];
-        
         for(int i = 0; i < inputs.length; i++)//Build fast network
         {
         	int size = inputs[i].size();
@@ -99,13 +105,24 @@ public class Topology
         	for(int node : inputs[i])
 	        {
 	        	network[i][j] = node;
-	        	weights[i][j] = links.get(Link.hash(i, j)).weight;
+	        	Link link = links.get(Link.hash(i, node));
+	        	if(link.enabled)
+	        		weights[i][j] = link.weight;
 	        	j++;
 	        }
+        }
+        
+        int[] order = new int[ordered.size()];
+        int i = 0;
+        for(int node : ordered)
+        {
+        	order[i] = node;
+        	i++;
         }
         
         this.network = network;
         this.weights = weights;
         this.values = new float[numNodes];
+        this.order = order;
 	}
 }

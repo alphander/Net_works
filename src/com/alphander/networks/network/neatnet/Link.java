@@ -2,13 +2,13 @@ package com.alphander.networks.network.neatnet;
 
 public class Link
 {
-	public int a, b;
-	public float weight;
-	public boolean enabled;
+	public int a, b = 0;
+	public float weight = 0f;
+	public boolean enabled = true;
 	
 	private int hash = 0;
 	
-	public Link(int a, int b) 
+	public Link(int a, int b)
 	{
 		this.a = a;
 		this.b = b;

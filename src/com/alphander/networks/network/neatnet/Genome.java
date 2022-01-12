@@ -100,4 +100,17 @@ public class Genome
 		for(Mutation mutation : mutations)
 			mutation.mutate(this);
 	}
+	
+	public boolean canLink(int a, int b)
+	{
+		boolean contains = links.containsKey(Link.hash(a, b));
+		
+		boolean same = a == b;
+		
+		boolean bothInInput = a < inputDims && b < inputDims;
+		
+		boolean bothInOutput = a > inputDims-1 && a < outputDims && b > inputDims-1 && b < outputDims;
+		
+		return !(contains || same || bothInInput || bothInOutput);
+	}
 }

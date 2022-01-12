@@ -5,6 +5,7 @@ import java.util.Random;
 import com.alphander.networks.network.neatnet.Genome;
 import com.alphander.networks.network.neatnet.Link;
 import com.alphander.networks.network.neatnet.mutation.Mutation;
+import com.alphander.networks.utils.Util;
 
 public class LinkMutation extends Mutation
 {
@@ -17,18 +18,17 @@ public class LinkMutation extends Mutation
 	public void mutate(Genome genome)
 	{
 		if(Math.random() > probability) return;
-		
 		Random random = new Random();
 		
 		int numNodes = genome.numNodes;
 		
-		int in = random.nextInt(numNodes), out = random.nextInt(numNodes);
-		
-		while(!genome.links.containsKey(Link.hash(in, out)))
+		int in = 0, out = 0;
+		do
 		{
 			in = random.nextInt(numNodes);
 			out = random.nextInt(numNodes);
 		}
+		while(!genome.canLink(in, out));
 		
 		Link link = new Link(in, out);
 		

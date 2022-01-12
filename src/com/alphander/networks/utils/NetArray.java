@@ -42,6 +42,13 @@ public class NetArray implements Iterable<Float>, Cloneable
 			this.array.add(array[i]);
 	}
 	
+	public NetArray(Double...array)
+	{
+		this.array = new ArrayList<Float>();
+		for(int i = 0; i < array.length; i++)
+			this.array.add(array[i].floatValue());
+	}
+	
 	public NetArray()
 	{
 		this.array = new ArrayList<Float>();

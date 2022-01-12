@@ -1,6 +1,9 @@
 package com.alphander.networks.network.neatnet;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+
 import com.alphander.networks.network.Network;
 import com.alphander.networks.network.activation.Activator;
 import com.alphander.networks.network.activation.activators.Tanh;
@@ -15,18 +18,19 @@ import com.alphander.networks.utils.Util;
 
 public class NEATNet implements Network
 {
-	public int populationSize;
+	public int populationSize = 50;
 	int inputDims, outputDims;
 	float[] inputs, outputs;
 	public Activator activator = new Tanh();
 	public Mutation[] mutations = new Mutation[] {
+		new LinkMutation(1f),
+		new NodeMutation(1f),
 		new WeightRandomMutation(1f),
 		new WeightShiftMutation(1f),
-		new ToggleMutation(1f),
-		new NodeMutation(1f),
-		new LinkMutation(1f)
+		new ToggleMutation(0f),
 	};
 	
+	HashSet<Genome> genomes = new HashSet<Genome>();
 	ArrayList<Topology> instances = new ArrayList<Topology>();
 	
 	int current = 0;
@@ -39,11 +43,8 @@ public class NEATNet implements Network
 		this.outputDims = outputDims;
 		
 		Genome genome = new Genome(mutations, inputDims, outputDims);
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < 2; i++)
 			genome.mutate();
-		Util.print(genome.links.size() + " ");
-		for(Link link : genome.links.values())
-			Util.print("" + link.a + " : " + link.b);
 		Topology topo = new Topology(genome, activator);
 		instances.add(topo);
 	}
@@ -67,6 +68,20 @@ public class NEATNet implements Network
 	public NetArray getOutput()
 	{
 		return new NetArray(outputs);
+	}
+	
+	public void train(float[] in)
+	{
+		if(in.length != outputDims) return;
+		
+		float error = 0f;
+		for(int i = 0; i < in.length; i++)
+		{
+			float d = in[i] * outputs[i];
+			error += d * d;
+		}
+		
+		train(-error);
 	}
 	
 	public void train(float score)
