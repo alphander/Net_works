@@ -1,4 +1,4 @@
-package com.alphander.networks.network.neatnet;
+package com.alphander.networks.network.neatnet.structure;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -16,8 +16,6 @@ public class Topology
 	public int[] order;//Contains order that each node needs to run.
 	public Activator activator;
 	public int inputDims, outputDims;
-	
-	public float score = 0f;
 	
 	Topology(Genome genome, Activator activator)
 	{	
@@ -53,7 +51,7 @@ public class Topology
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void build(Genome genome)//My special algorithm for compiling a neural network from the genome instructions.
+	private void build(Genome genome)//My special algorithm for compiling a neural network from the genome instructions.
 	{
 		int numNodes = genome.numNodes; //how many nodes there are in the genome.
 		HashMap<Integer, Link> links = genome.links; //reference to all links in genome.

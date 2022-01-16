@@ -34,11 +34,25 @@ public class NEATCartpoleDemo
 		
 		env.render();
 		
-		int iter = 100;
+		int iter = 1000;
+		float rewardThresh = 400f;
 		NetArray totalReward = new NetArray();
 		float latestReward = 0f;
-		for(int i = 0; i < iter && latestReward < 200f; i++)
+		for(int i = 0; i < iter && latestReward < rewardThresh; i++)
 		{
+			for(int j = 0; j < 10; j++)
+			{
+				agent.testEnvironment(10);
+				latestReward = agent.totalReward;
+				totalReward.append(agent.totalReward);
+				
+				if(totalReward.length() > 0)
+				{
+					graph.addData(totalReward.mean());
+					totalReward.remove(0);
+				}
+			}
+			
 			agent.learn();
 			System.out.println(i + " ---------------------------------------------------------- " + latestReward);
 		}
@@ -50,7 +64,6 @@ public class NEATCartpoleDemo
 			agent.testEnvironment(20);
 			latestReward = agent.totalReward;
 			runGraph.addData(latestReward);
-			agent.clearAll();
 		}
 	}
 }

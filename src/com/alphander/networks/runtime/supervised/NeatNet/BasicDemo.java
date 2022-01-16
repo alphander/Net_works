@@ -9,13 +9,17 @@ public class BasicDemo
 {
 	public static void main(String[] args)
 	{
-		NEATNet neat = new NEATNet(2, 2);
+		NEATNet net = new NEATNet(2, 2);
 		
-		for(int i = 0; i < 1; i++)
+		for(int i = 0; i < 20000; i++)
 		{	
-			NetArray array = neat.run(new NetArray(Math.random(), Math.random()));
+			NetArray array = net.run(new NetArray(1.0f, 1.0f));
 			
-			Util.print(array.string());
+			net.train(new NetArray(0.0f, 1.0f));
+			
+			Util.print(net.getOutput().string());
 		}
+		
+		Util.test(net);
 	}
 }

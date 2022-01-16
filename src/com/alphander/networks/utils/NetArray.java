@@ -242,7 +242,7 @@ public class NetArray implements Iterable<Float>, Cloneable
 	
 	public int sampleDiscrete()
 	{
-		float random = (float) Math.random();
+		double random = Math.random();
 		float sum = 0;
 		int i;
 		for(i = 0; sum < random && i < length(); i++)
@@ -317,6 +317,41 @@ public class NetArray implements Iterable<Float>, Cloneable
 			out[i] = (float) (Math.exp(get(i)) / sum);
 		
 		return new NetArray(out);
+	}
+	
+	public NetArray normalize()
+	{
+		float[] out = new float[length()];
+		
+		float sum = 0;
+		for(int i = 0; i < length(); i++)
+			sum += get(i);
+		
+		for(int i = 0; i < length(); i++)
+			out[i] = get(i) / sum;
+		
+		return new NetArray(out);
+	}
+	
+	public NetArray vectorNormalize()
+	{
+		float[] out = new float[length()];
+		
+		float mag = magnitude();
+		
+		for(int i = 0; i < length(); i++)
+			out[i] = get(i) / mag;
+		
+		return new NetArray(out);
+	}
+	
+	public float magnitude()
+	{	
+		float sum = 0;
+		for(int i = 0; i < length(); i++)
+			sum += get(i) * get(i);
+		
+		return (float) Math.sqrt(sum);
 	}
 	
 	public NetArray noise(float strength)
@@ -483,7 +518,9 @@ public class NetArray implements Iterable<Float>, Cloneable
 	@Override
 	public NetArray clone()
 	{
-		return (NetArray) array.clone();
+		@SuppressWarnings("unchecked")
+		ArrayList<Float> copy = (ArrayList<Float>) array.clone();
+		return new NetArray(copy);
 	}
 
 	@Override

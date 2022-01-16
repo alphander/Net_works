@@ -1,4 +1,4 @@
-package com.alphander.networks.network.neatnet;
+package com.alphander.networks.network.neatnet.structure;
 
 public class Link
 {

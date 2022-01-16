@@ -2,10 +2,9 @@ package com.alphander.networks.network.neatnet.mutation.mutations;
 
 import java.util.Random;
 
-import com.alphander.networks.network.neatnet.Genome;
-import com.alphander.networks.network.neatnet.Link;
 import com.alphander.networks.network.neatnet.mutation.Mutation;
-import com.alphander.networks.utils.Util;
+import com.alphander.networks.network.neatnet.structure.Genome;
+import com.alphander.networks.network.neatnet.structure.Link;
 
 public class LinkMutation extends Mutation
 {

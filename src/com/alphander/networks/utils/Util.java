@@ -3,6 +3,7 @@ package com.alphander.networks.utils;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import com.alphander.networks.network.Network;
 import com.alphander.networks.network.deepnet.DeepNet;
 
 public class Util
@@ -39,7 +40,7 @@ public class Util
 	
 	
 	@SuppressWarnings("resource")
-	public static void test(DeepNet net)
+	public static void test(Network net)
 	{
 		Scanner s = new Scanner(System.in);
 		

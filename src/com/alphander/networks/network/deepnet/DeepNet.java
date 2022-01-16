@@ -87,6 +87,7 @@ public class DeepNet implements Network, Cloneable
 		output = layers[layers.length - 1].output;
 	}
 	
+	@Override
 	public void train(NetArray expected)
 	{
 		clearGradients();

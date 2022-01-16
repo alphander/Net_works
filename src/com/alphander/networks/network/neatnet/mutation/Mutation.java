@@ -1,6 +1,6 @@
 package com.alphander.networks.network.neatnet.mutation;
 
-import com.alphander.networks.network.neatnet.Genome;
+import com.alphander.networks.network.neatnet.structure.Genome;
 
 public abstract class Mutation
 {
