@@ -11,18 +11,18 @@ public class Util
 	public static void save(DeepNet net)
 	{
 		System.out.println("...Saving network...");
-		SaveNetwork.saveNetwork(net, "SavedNetworks");
+		SaveDeepnet.saveNetwork(net, "SavedNetworks");
 	}
 	public static void save(DeepNet net, String dir)
 	{
 		System.out.println("...Saving network...");
-		SaveNetwork.saveNetwork(net, dir);
+		SaveDeepnet.saveNetwork(net, dir);
 	}
 	
 	public static DeepNet load(DeepNet backup)
 	{
 		System.out.println("...Loading network...");
-		DeepNet net =  LoadNetwork.loadNetwork("SavedNetworks", backup.name);
+		DeepNet net =  LoadDeepnet.loadNetwork("SavedNetworks", backup.name);
 		
 		if(net == null) return backup;
 		
@@ -31,7 +31,7 @@ public class Util
 	public static DeepNet load(DeepNet backup, String dir)
 	{
 		System.out.println("...Loading network...");
-		DeepNet net =  LoadNetwork.loadNetwork(dir, backup.name);
+		DeepNet net =  LoadDeepnet.loadNetwork(dir, backup.name);
 		
 		if(net == null) return backup;
 		

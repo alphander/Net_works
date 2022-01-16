@@ -8,7 +8,7 @@ import java.util.Scanner;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.deepnet.Layer;
 
-class LoadNetwork
+class LoadDeepnet
 {
 	public static DeepNet loadNetwork(String dir, String name)
 	{

@@ -6,7 +6,7 @@ import java.util.Formatter;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.deepnet.Layer;
 
-class SaveNetwork
+class SaveDeepnet
 {
 	public static void saveNetwork(DeepNet network, String dir)
 	{	
