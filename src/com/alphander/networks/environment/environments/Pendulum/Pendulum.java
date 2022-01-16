@@ -7,11 +7,6 @@ import com.alphander.networks.utils.NetArray;
 
 public class Pendulum extends Environment
 {
-	//Render parameters
-	int screenX = 540;
-	int screenY = 540;
-	String name = "Pendulum";
-
 	public float acceleration = 10;
 
 	public float dt = 0.01f;
@@ -32,6 +27,9 @@ public class Pendulum extends Environment
 		reset();
 		observationSpace = 2;
 		actionSpace = 2;
+		screenX = 540;
+		screenY = 540;
+		name = "Pendulum";
 	}
 	@Override
 	public void setAction(NetArray action)
@@ -100,7 +98,7 @@ public class Pendulum extends Environment
 		if(action != null)
 			frame.addKeyListener(action);
 
-		PendulumVisualizer visual = new PendulumVisualizer(this, action);
+		PendulumVisualizer visual = new PendulumVisualizer(this, action, screenX, screenY);
 		frame.setContentPane(visual);
 	}
 

@@ -2,9 +2,6 @@ package com.alphander.networks.network.neatnet;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Random;
 
 import com.alphander.networks.network.Network;
@@ -19,11 +16,10 @@ import com.alphander.networks.network.neatnet.mutation.mutations.ToggleMutation;
 import com.alphander.networks.network.neatnet.mutation.mutations.NodeMutation;
 import com.alphander.networks.network.neatnet.mutation.mutations.LinkMutation;
 import com.alphander.networks.utils.NetArray;
-import com.alphander.networks.utils.Util;
 
 public class NEATNet implements Network
 {
-	public int targetPopulation = 150;
+	public int population = 50;
 	public float speciesThresh = 4f;
 	public float deathRate = 0.3f;
 	private float repopTypeThresh = 0.4f;;
@@ -33,13 +29,13 @@ public class NEATNet implements Network
 	private float[] inputs, outputs;
 	public Activator activator = new Tanh();
 	public Mutation[] mutations = new Mutation[] 
-			{
-					new LinkMutation(0.01f),
-					new NodeMutation(0.1f),
-					new WeightShiftMutation(0.2f),
-					new WeightRandomMutation(0.2f),
-					new ToggleMutation(0.01f),
-			};
+	{
+		new LinkMutation(0.01f),
+		new NodeMutation(0.1f),
+		new WeightShiftMutation(0.2f),
+		new WeightRandomMutation(0.2f),
+		new ToggleMutation(0.01f),
+	};
 	private ArrayList<Genome> genomes = new ArrayList<Genome>();
 
 	private Topology current;
@@ -52,8 +48,8 @@ public class NEATNet implements Network
 
 		this.inputDims = inputDims;
 		this.outputDims = outputDims;
-		
-		for(int i = 0; i < targetPopulation; i++)
+
+		for(int i = 0; i < population; i++)
 			genomes.add(new Genome(activator, mutations, inputDims, outputDims));
 		this.current = genomes.get(0).topo;
 	}
@@ -109,17 +105,20 @@ public class NEATNet implements Network
 		Genome owner = genomes.get(index);
 		Topology instance = owner.topo;
 		owner.score = score;
-
 		current = instance;
 
-		if(index != 0) return;
-		
+		if(index == 0) speciate();
+	}
+	
+	private void speciate()
+	{
 		ArrayList<ArrayList<Genome>> all = new ArrayList<ArrayList<Genome>>();//Species
 		ArrayList<Genome> initSpecies = new ArrayList<Genome>();
 		initSpecies.add(genomes.get(0));
 		all.add(initSpecies);
-		
-		for(Genome candidate : genomes)//Speciation
+
+		//Speciate genomes.
+		for(Genome candidate : genomes)
 		{
 			float smallest = Float.MAX_VALUE;
 			ArrayList<Genome> best = null;
@@ -133,7 +132,7 @@ public class NEATNet implements Network
 						best = species;
 					}
 				}
-				
+
 			if(smallest > speciesThresh)
 			{
 				ArrayList<Genome> newArray = new ArrayList<Genome>();
@@ -144,11 +143,13 @@ public class NEATNet implements Network
 				best.add(candidate);
 		}
 
-		for(ArrayList<Genome> species : all)//Sort
+		//Sort by score.
+		for(ArrayList<Genome> species : all)
 			Collections.sort(species);
 
+		//Cull genomes.
 		int removed = 0;
-		for(ArrayList<Genome> s : all)//Cull
+		for(ArrayList<Genome> s : all)
 		{
 			float size = s.size() * deathRate;
 			for(int i = 0; i < size; i++)
@@ -158,16 +159,15 @@ public class NEATNet implements Network
 				removed++;
 			}
 		}
-
-		for(int i = 0; i < removed; i++)//Repopulate
+		//Repopulate genomes.
+		for(int i = 0; i < removed; i++)
 		{
 			ArrayList<Genome> species = all.get(random.nextInt(all.size()));
-			
 			Genome genome = species.get(random.nextInt(species.size()));
 			
 			double type = Math.random();
-			
 			Genome newest = null;
+			
 			if(type > repopTypeThresh)
 			{
 				Genome other;
@@ -176,7 +176,6 @@ public class NEATNet implements Network
 					other = species.get(random.nextInt(species.size()));
 				}
 				while(other == genome);
-					
 				newest = genome.crossover(other);
 			}
 			else
@@ -184,6 +183,6 @@ public class NEATNet implements Network
 
 			genomes.add(newest);
 		}
-		
+		generations++;
 	}
 }

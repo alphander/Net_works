@@ -17,7 +17,7 @@ public class BasicDemo
 			
 			net.train(new NetArray(0.0f, 1.0f));
 			
-			Util.print(net.getOutput().string());
+			Util.print(array.string());
 		}
 		
 		Util.test(net);

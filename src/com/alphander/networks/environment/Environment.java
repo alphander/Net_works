@@ -4,15 +4,18 @@ import com.alphander.networks.utils.NetArray;
 
 public abstract class Environment 
 {	
-	protected int terminal = 1;
-    protected float reward = 0.0f;
+	//Render parameters
+	protected int screenX, screenY;
+	protected String name;
+	
+	protected int terminal;
+    protected float reward;
 	
 	public abstract void setAction(NetArray action);
 	public abstract NetArray getState();
 	public abstract void reset();
 	
-	public int observationSpace = 0;
-	public int actionSpace = 0;
+	public int observationSpace, actionSpace;
 	
 	public float getReward()
 	{

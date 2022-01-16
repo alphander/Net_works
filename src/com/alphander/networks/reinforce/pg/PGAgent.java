@@ -50,8 +50,6 @@ public class PGAgent extends Agent
 			NetArray probability = actor.run(state);
 			int action = (int) probability.add(new NetArray(actionSpace).noise(random).sumZero()).sampleDiscrete();
 
-			//int action = new NetArray(actionSpace).noise(random).clip(0f, 1f).softMax().sampleDiscrete();
-
 			env.setAction(new NetArray().append(action));
 
 			float reward = env.getReward();

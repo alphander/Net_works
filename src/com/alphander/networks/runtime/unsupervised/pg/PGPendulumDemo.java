@@ -11,13 +11,17 @@ import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.loss.lossfunctions.NoLoss;
 import com.alphander.networks.reinforce.pg.PGAgent;
 import com.alphander.networks.utils.NetArray;
+import com.alphander.networks.utils.Util;
 import com.alphander.networks.utils.Display.NetworkGraph;
 
 public class PGPendulumDemo 
-{
+{	
 	//This uses the policy gradient theorem.
 	public static void main(String[] args) 
 	{	
+		float rewardThresh = 2000f;
+		int iterations = 10000;
+		
 		Pendulum env = new Pendulum();
 
 		DeepNet actor = new DeepNet(new int[] {env.observationSpace, 32, 64, 32, 16, 16, env.actionSpace});
@@ -35,13 +39,12 @@ public class PGPendulumDemo
 		PGAgent agent = new PGAgent(env, actor, 5, 0.92f, 0.1f);
 
 		NetworkGraph graph = new NetworkGraph("Reward", Color.RED, 0);
+		NetArray totalReward = new NetArray();
+		float latestReward = 0f;
 
 		env.render();
 
-		int iter = 100;
-		NetArray totalReward = new NetArray();
-		float latestReward = 0f;
-		for(int i = 0; i < iter; i++)
+		for(int i = 0; i < iterations && latestReward < rewardThresh; i++)
 		{
 			agent.testEnvironment(2);
 			latestReward = agent.totalReward;
@@ -53,9 +56,8 @@ public class PGPendulumDemo
 				totalReward.remove(0);
 			}
 			
-			if(iter % 4 == 0)
-				agent.learn();
-			System.out.println(i + " ---------------------------------------------------------- " + latestReward);
+			if(i % 4 == 0) agent.learn();
+			Util.print(i + " ---------------------------------------------------------- " + latestReward);
 		}
 		
 		while(true)

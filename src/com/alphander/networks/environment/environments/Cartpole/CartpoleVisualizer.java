@@ -17,14 +17,17 @@ class CartpoleVisualizer extends JPanel
 {
 	private static final long serialVersionUID = -7653112463947514894L;
 
-	KeyAction action;
-	Cartpole cartpole;
+	private KeyAction action;
+	private Cartpole cartpole;
+	private int screenX, screenY;
 	
-	public CartpoleVisualizer(Cartpole cartpole, KeyAction action)
+	public CartpoleVisualizer(Cartpole cartpole, KeyAction action, int screenX, int screenY)
 	{
 		this.action = action;
 		this.cartpole = cartpole;
 		this.setBackground(Color.LIGHT_GRAY);
+		this.screenX = screenX;
+		this.screenY = screenY;
 	}
 
 	@Override
@@ -35,8 +38,8 @@ class CartpoleVisualizer extends JPanel
 		Graphics2D graphics = (Graphics2D) inGraphics;
 		this.removeAll();
 		
-		float xOffset = cartpole.screenX / 2;
-		float yOffset = cartpole.screenY / 2;
+		float xOffset = screenX / 2;
+		float yOffset = screenY / 2;
 		
 		float mag = 200f;
 		float x1 = cartpole.pos;

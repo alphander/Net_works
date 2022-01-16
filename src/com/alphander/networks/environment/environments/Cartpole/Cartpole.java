@@ -7,11 +7,6 @@ import com.alphander.networks.utils.NetArray;
 
 public class Cartpole extends Environment
 {	
-	//Render parameters
-	int screenX = 960;
-	int screenY = 540;
-	String name = "Cartpole";
-	
 	//Environment parameters
 	public float dt = 0.01f;
     public float airResistance = 0.05f;
@@ -35,12 +30,14 @@ public class Cartpole extends Environment
     float velocity;
     public float t;
     
-    //Response
     public Cartpole()
     {
     	reset();
     	observationSpace = 4;
     	actionSpace = 2;
+    	screenX = 960;
+    	screenY = 540;
+    	name = "Cartpole";
     }
     @Override
 	public void setAction(NetArray action)
@@ -116,7 +113,7 @@ public class Cartpole extends Environment
 		if(action != null)
 			frame.addKeyListener(action);
 		
-		CartpoleVisualizer visual = new CartpoleVisualizer(this, action);
+		CartpoleVisualizer visual = new CartpoleVisualizer(this, action, screenX, screenY);
 		frame.setContentPane(visual);
 	}
 	

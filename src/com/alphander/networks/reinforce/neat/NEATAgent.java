@@ -4,10 +4,10 @@ import com.alphander.networks.environment.Environment;
 import com.alphander.networks.network.neatnet.NEATNet;
 import com.alphander.networks.reinforce.Agent;
 import com.alphander.networks.utils.NetArray;
+import com.alphander.networks.utils.Util;
 
 public class NEATAgent extends Agent
 {
-	public float totalReward;
 	Environment env;
 	NEATNet actor;
 	
@@ -20,11 +20,17 @@ public class NEATAgent extends Agent
 	@Override
 	public void testEnvironment(int delay)
 	{
-		NetArray state = env.getState();
-		totalReward += env.getReward();
-		NetArray probability = actor.run(state).softMax();
-		int action = (int) probability.add(new NetArray(env.actionSpace)).sampleDiscrete();
-		env.setAction(new NetArray().append(action));
+		while(env.getDone() != 0)
+		{
+			NetArray state = env.getState();
+			totalReward += env.getReward();
+			NetArray probability = actor.run(state).softMax();
+			int action = (int) probability.add(new NetArray(env.actionSpace)).sampleDiscrete();
+			env.setAction(new NetArray().append(action));
+			
+			Util.delay(delay);
+		}
+		env.reset();
 	}
 
 	@Override

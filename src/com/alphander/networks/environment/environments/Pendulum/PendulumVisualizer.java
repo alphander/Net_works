@@ -17,14 +17,17 @@ class PendulumVisualizer extends JPanel
 {
 	private static final long serialVersionUID = -1174915281353137161L;
 
-	KeyAction action;
-	Pendulum pendulum;
+	private KeyAction action;
+	private Pendulum pendulum;
+	private int screenX, screenY;
 
-	public PendulumVisualizer(Pendulum pendulum, KeyAction action)
+	public PendulumVisualizer(Pendulum pendulum, KeyAction action, int screenX, int screenY)
 	{
 		this.action = action;
 		this.pendulum = pendulum;
 		this.setBackground(Color.LIGHT_GRAY);
+		this.screenX = screenX;
+		this.screenY = screenY;
 	}
 
 	@Override
@@ -35,8 +38,8 @@ class PendulumVisualizer extends JPanel
 		Graphics2D graphics = (Graphics2D) inGraphics;
 		this.removeAll();
 
-		float xOffset = pendulum.screenX / 2;
-		float yOffset = pendulum.screenY / 2;
+		float xOffset = screenX / 2;
+		float yOffset = screenY / 2;
 
 		float mag = 200f;
 		float x2 = (float) Math.cos(pendulum.theta) * mag;
