@@ -9,7 +9,7 @@ import com.alphander.networks.network.activation.activators.Swish;
 import com.alphander.networks.network.activation.activators.Tanh;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.loss.lossfunctions.NoLoss;
-import com.alphander.networks.reinforce.pg.PGAgent;
+import com.alphander.networks.reinforce.PGAgent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
 import com.alphander.networks.utils.Display.NetworkGraph;

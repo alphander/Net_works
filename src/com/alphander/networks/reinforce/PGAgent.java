@@ -1,10 +1,9 @@
-package com.alphander.networks.reinforce.pg;
+package com.alphander.networks.reinforce;
 
 import java.util.ArrayList;
 
 import com.alphander.networks.environment.Environment;
 import com.alphander.networks.network.deepnet.DeepNet;
-import com.alphander.networks.reinforce.Agent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
 
