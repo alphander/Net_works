@@ -13,7 +13,7 @@ public class NEATPendulumDemo
 {
 	public static void main(String[] args) 
 	{	
-		float rewardThresh = 400f;
+		float rewardThresh = 2000f;
 		int iterations = 10000;
 		
 		//Actor/Environment setup
