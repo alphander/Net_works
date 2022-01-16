@@ -1,7 +1,8 @@
-package com.alphander.networks.reinforce;
+package com.alphander.networks.reinforce.agents;
 
 import com.alphander.networks.environment.Environment;
 import com.alphander.networks.network.neatnet.NEATNet;
+import com.alphander.networks.reinforce.Agent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
 

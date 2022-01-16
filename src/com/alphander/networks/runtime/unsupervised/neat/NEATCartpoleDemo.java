@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import com.alphander.networks.environment.environments.cartpole.Cartpole;
 import com.alphander.networks.network.neatnet.NEATNet;
-import com.alphander.networks.reinforce.NEATAgent;
+import com.alphander.networks.reinforce.agents.NEATAgent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
 import com.alphander.networks.utils.Display.NetworkGraph;
