@@ -1,0 +1,3 @@
+com.alphander.networks.network.activation.activators.Tanh
+com.alphander.networks.network.activation.activators.ReLU
+com.alphander.networks.network.activation.activators.Tanh

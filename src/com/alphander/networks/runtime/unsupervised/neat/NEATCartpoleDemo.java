@@ -30,7 +30,7 @@ public class NEATCartpoleDemo
 		env.render();
 		for(int i = 0; i < iterations && latestReward < rewardThresh; i++)
 		{
-			agent.testEnvironment();
+			agent.run();
 			latestReward = agent.totalReward;
 			totalReward.append(agent.totalReward);
 			
@@ -49,9 +49,10 @@ public class NEATCartpoleDemo
 		
 		while(true)
 		{
-			agent.testEnvironment(20);
+			agent.run(20);
 			latestReward = agent.totalReward;
 			runGraph.addData(latestReward);
+			agent.totalReward = 0;
 		}
 	}
 }

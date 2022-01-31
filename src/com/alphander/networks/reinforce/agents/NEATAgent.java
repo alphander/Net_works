@@ -18,7 +18,7 @@ public class NEATAgent extends Agent
 	}
 	
 	@Override
-	public void testEnvironment(int delay)
+	public void run(int delay)
 	{
 		while(env.getDone() != 0)
 		{
@@ -37,6 +37,12 @@ public class NEATAgent extends Agent
 	public void learn()
 	{
 		actor.train(totalReward);
+		clear();
+	}
+	
+	@Override
+	public void clear()
+	{
 		totalReward = 0f;
 	}
 }

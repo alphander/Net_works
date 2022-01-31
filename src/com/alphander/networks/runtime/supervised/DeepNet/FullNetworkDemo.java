@@ -14,8 +14,9 @@ public class FullNetworkDemo
 {	
 	public static void main(String[] args)
 	{
-		//Network Setup. These are values I found that work well.
+		int iterations = 10_000;
 		
+		//Network Setup. These are values I found that work well.
 		DeepNet net = new DeepNet(new int[] {2, 16, 16, 2});
 		net.name = "FullNetwork";
 		net.weightDecay = 0.00001f;
@@ -35,9 +36,7 @@ public class FullNetworkDemo
 		NetworkGraph graph = new NetworkGraph("Error", Color.BLUE, 0);//Setting up graph
 		
 		//Training iterations
-		int iter = 10_000;
-		
-		for(int i = 0; i < iter; i++)
+		for(int i = 0; i < iterations; i++)
 		{	
 			net.run(new NetArray(0f, 0f));
 			net.train(new NetArray(0f, 0f));
@@ -54,7 +53,7 @@ public class FullNetworkDemo
 			Util.printError(net);
 			graph.addData(net.getError());
 		}
-		System.out.println("Final Error: [" + net.getError() + "]");
+		Util.print("Final Error: [" + net.getError() + "]");
 	
 		Util.save(net);//Saving network!
 		

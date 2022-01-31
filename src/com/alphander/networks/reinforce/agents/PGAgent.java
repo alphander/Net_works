@@ -42,7 +42,7 @@ public class PGAgent extends Agent
 	}
 	
 	@Override
-	public void testEnvironment(int delay)
+	public void run(int delay)
 	{
 		while(env.getDone() != 0)
 		{
@@ -107,10 +107,11 @@ public class PGAgent extends Agent
 		loss = losses.sum();
 		}
 
-		clearAll();
+		clear();
 	}
 
-	public void clearAll()
+	@Override
+	public void clear()
 	{
 		states.clear();
 		probs.clear();

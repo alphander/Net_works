@@ -8,9 +8,11 @@ public class BasicDemo
 {
 	public static void main(String[] args)
 	{
+		int iterations = 10_000;
+		
 		DeepNet net = new DeepNet(new int[] {2, 16, 16, 2});//Easy network setup. Set size with int array.
 		
-		for(int i = 0; i < 10_000; i++)//Number of training iterations
+		for(int i = 0; i < iterations; i++)//Number of training iterations
 		{	
 			//Random rules that I made of for no specific reason.
 			
@@ -23,8 +25,8 @@ public class BasicDemo
 			Util.printError(net);
 		}
 		
-		System.out.println(net.run(new NetArray(1f, 0f)).string());//Output of our expected case 1
-		System.out.println(net.run(new NetArray(1f, 1f)).string());//Output of our expected case 2
+		Util.print(net.run(new NetArray(1f, 0f)).string());//Output of our expected case 1
+		Util.print(net.run(new NetArray(1f, 1f)).string());//Output of our expected case 2
 		
 		Util.test(net);
 	}

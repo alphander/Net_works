@@ -18,10 +18,22 @@ public class Pendulum extends Environment
 	public float timeLimit = 600f;
 	public float rewardTrigger= 0.7f;
 
-	float theta;
-	float vel;
+	public float theta;
+	public float vel;
 	float t = 0f;
 
+	public Pendulum(String name, float theta, float vel)
+	{
+		reset();
+		observationSpace = 2;
+		actionSpace = 2;
+		screenX = 540;
+		screenY = 540;
+		this.name = name;
+    	this.theta = (float) Math.toRadians(theta + 90f);
+    	this.vel = vel;
+	}
+	
 	public Pendulum()
 	{
 		reset();
@@ -29,8 +41,9 @@ public class Pendulum extends Environment
 		actionSpace = 2;
 		screenX = 540;
 		screenY = 540;
-		name = "Pendulum";
+		this.name = "Pendulum";
 	}
+	
 	@Override
 	public void setAction(NetArray action)
 	{
@@ -41,7 +54,7 @@ public class Pendulum extends Environment
 	@Override
 	public NetArray getState()
 	{
-		return new NetArray((float) Math.toDegrees(theta), (float) vel);
+		return new NetArray(((float) Math.toDegrees(theta) - 90f), (float) vel);
 	}
 	@Override
 	public float getReward()
@@ -67,7 +80,9 @@ public class Pendulum extends Environment
 
 	private void step(NetArray action)
 	{
-		float a = (action.get(0) - 0.5f) * 2f * acceleration;
+		float a = 0f;
+		if(action != null)
+			a = (action.get(0) - 0.5f) * 2f * acceleration;
 
 		vel += Math.sin(theta) * (a / radius) * dt;
 		vel += Math.cos(theta) * (-gravity / radius) * dt;

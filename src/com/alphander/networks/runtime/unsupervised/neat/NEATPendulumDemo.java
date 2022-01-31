@@ -30,7 +30,7 @@ public class NEATPendulumDemo
 		env.render();
 		for(int i = 0; i < iterations && latestReward < rewardThresh; i++)
 		{
-			agent.testEnvironment();
+			agent.run();
 			latestReward = agent.totalReward;
 			totalReward.append(agent.totalReward);
 			
@@ -48,7 +48,7 @@ public class NEATPendulumDemo
 		
 		while(true)
 		{
-			agent.testEnvironment(20);
+			agent.run(20);
 			latestReward = agent.totalReward;
 			runGraph.addData(latestReward);
 		}

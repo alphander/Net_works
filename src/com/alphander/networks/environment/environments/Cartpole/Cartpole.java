@@ -30,6 +30,17 @@ public class Cartpole extends Environment
     float velocity;
     public float t;
     
+    public Cartpole(String name, float theta, float thetaVelocity)
+    {
+    	reset();
+    	observationSpace = 4;
+    	actionSpace = 2;
+    	screenX = 960;
+    	screenY = 540;
+    	this.name = name;
+    	this.theta = (float) Math.toRadians(theta);
+    	this.thetaVelocity = thetaVelocity;
+    }
     public Cartpole()
     {
     	reset();
@@ -39,6 +50,7 @@ public class Cartpole extends Environment
     	screenY = 540;
     	name = "Cartpole";
     }
+    
     @Override
 	public void setAction(NetArray action)
 	{

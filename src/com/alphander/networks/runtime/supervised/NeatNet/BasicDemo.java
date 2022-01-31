@@ -9,9 +9,10 @@ public class BasicDemo
 {
 	public static void main(String[] args)
 	{
+		int iterations = 10_000;
 		NEATNet net = new NEATNet(2, 2);
 		
-		for(int i = 0; i < 20000; i++)
+		for(int i = 0; i < iterations; i++)
 		{	
 			NetArray array = net.run(new NetArray(1.0f, 1.0f));
 			

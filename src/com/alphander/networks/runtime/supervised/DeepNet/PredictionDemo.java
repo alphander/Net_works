@@ -1,9 +1,6 @@
 package com.alphander.networks.runtime.supervised.DeepNet;
 
 import java.awt.Color;
-import java.util.Arrays;
-
-import com.alphander.networks.environment.Environment;
 import com.alphander.networks.environment.environments.pendulum.Pendulum;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.utils.NetArray;
@@ -14,31 +11,31 @@ public class PredictionDemo
 {
 	public static void main(String[] args)
 	{
+		int iterations = 10_000;
+		
 		//Setting up network!
-				
-		DeepNet net = new DeepNet(new int[] {2, 32, 32, 16, 2});//Util.loadNetwork(set);//Will return new network if none is found with the same name.
+		DeepNet net = new DeepNet(new int[] {2, 32, 32, 16, 2});//Util.loadNetwork(net);//Will return new network if none is found with the same name.
 		net.name = "PendulumTester";
-		net.weightDecay = 0.0f;
+		net.weightDecay = 0.00001f;
 		net.stepWeights = 0.033f;
 		net.stepBiases = 0.0033f;
 		
 		Util.hookSave(net);//Saves network if program shuts down.
 		
 		//Settings up environment!
-		Environment pendulum = new Pendulum();
-		
-		NetArray previous = pendulum.getState();
+		Pendulum env = new Pendulum("Pendulum", 90.0f, 0.0f);
+		env.airResistance = 0.0f;
+		env.dt = 0.01f;
 		
 		//Setting up graph
 		NetworkGraph errorGraph = new NetworkGraph("Error", Color.GREEN, 10000);
 		
 		//Training the network.
-		int iter = 300_000;
-		
-		for(int i = 0; i < iter; i++)
+		NetArray previous = env.getState();
+		for(int i = 0; i < iterations; i++)
 		{	
-			pendulum.setAction(null);
-			NetArray observation = pendulum.getState();
+			env.setAction(null);
+			NetArray observation = env.getState();
 			
 			net.run(previous);
 			net.train(observation);
@@ -48,9 +45,8 @@ public class PredictionDemo
 			errorGraph.addData(net.getError());
 			
 			Util.printError(net);
-			
 		}
-		System.out.println("Final Error: [" + net.getError() + "]");
+		Util.print("Final Error: [" + net.getError() + "]");
 		
 		Util.save(net);//Saving network
 		
@@ -61,23 +57,25 @@ public class PredictionDemo
 	
 	private static void compare(DeepNet net)
 	{
-		Environment env = new Pendulum();
+		Pendulum env = new Pendulum("Pendulum", 90.0f, 0.0f);
+		env.airResistance = 0.0f;
+		env.dt = 0.01f;
 		
-		NetArray prediction = new NetArray(1.0f, 0.0f);
+		NetArray prediction = new NetArray(0.0f, 0.0f);
 		
-		NetworkGraph pendulumGraphReal = new NetworkGraph("Observation", Color.RED, 1000);
+		NetworkGraph pendulumGraph = new NetworkGraph("Observation", Color.RED, 1000);
 		NetworkGraph pendulumGraphPre = new NetworkGraph("Prediction", Color.BLUE, 1000);
 		
 		while(true)
 		{
 			NetArray observation = env.getState();
-			System.out.println("Truth: " + Arrays.toString(observation.array()));
+			Util.print("Truth: " + observation.string());
 			
 			env.setAction(null);
-			System.out.println("Predict: " + Arrays.toString(prediction.array()));
+			Util.print("Predict: " + prediction.string());
 			prediction = net.run(prediction);
 			
-			pendulumGraphReal.addData(observation.get(0));
+			pendulumGraph.addData(observation.get(0));
 			pendulumGraphPre.addData(prediction.get(0));
 			
 			Util.delay(100);

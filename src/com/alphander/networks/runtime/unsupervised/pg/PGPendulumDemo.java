@@ -19,7 +19,7 @@ public class PGPendulumDemo
 	//This uses the policy gradient theorem.
 	public static void main(String[] args) 
 	{	
-		float rewardThresh = 2000f;
+		float rewardThresh = 3000f;
 		int iterations = 10000;
 		
 		Pendulum env = new Pendulum();
@@ -46,7 +46,7 @@ public class PGPendulumDemo
 
 		for(int i = 0; i < iterations && latestReward < rewardThresh; i++)
 		{
-			agent.testEnvironment(2);
+			agent.run();
 			latestReward = agent.totalReward;
 			totalReward.append(agent.totalReward);
 			
@@ -62,8 +62,8 @@ public class PGPendulumDemo
 		
 		while(true)
 		{
-			agent.testEnvironment(20);
-			agent.clearAll();
+			agent.run(20);
+			agent.clear();
 		}
 	}
 }

@@ -4,11 +4,12 @@ public abstract class Agent
 {
 	public float totalReward;
 	
-	public abstract void testEnvironment(int delay);
+	public abstract void run(int delay);
 	public abstract void learn();
+	public abstract void clear();
 	
-	public void testEnvironment()
+	public void run()
 	{
-		this.testEnvironment(0);
+		this.run(0);
 	}
 }
