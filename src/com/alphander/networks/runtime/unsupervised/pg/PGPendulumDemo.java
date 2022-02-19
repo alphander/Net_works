@@ -36,7 +36,7 @@ public class PGPendulumDemo
 		actor.setActivator(4, new Tanh());
 		actor.setActivator(5, new SoftMax());
 
-		PGAgent agent = new PGAgent(env, actor, 5, 0.92f, 0.1f);
+		PGAgent agent = new PGAgent(env, actor, 5, 0.92f, 0.3f);
 
 		NetworkGraph graph = new NetworkGraph("Reward", Color.RED, 0);
 		NetArray totalReward = new NetArray();

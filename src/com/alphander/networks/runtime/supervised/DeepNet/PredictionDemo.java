@@ -25,7 +25,10 @@ public class PredictionDemo
 		//Settings up environment!
 		Pendulum env = new Pendulum("Pendulum", 90.0f, 0.0f);
 		env.airResistance = 0.0f;
-		env.dt = 0.01f;
+		env.dt = 0.1f;
+		env.stepSize = 1;
+		env.thetaScale = 90f;
+		env.velScale = 4f;
 		
 		//Setting up graph
 		NetworkGraph errorGraph = new NetworkGraph("Error", Color.GREEN, 10000);
@@ -51,17 +54,7 @@ public class PredictionDemo
 		Util.save(net);//Saving network
 		
 		//Running and comparing prediction!
-		compare(net);
-		
-	}
-	
-	private static void compare(DeepNet net)
-	{
-		Pendulum env = new Pendulum("Pendulum", 90.0f, 0.0f);
-		env.airResistance = 0.0f;
-		env.dt = 0.01f;
-		
-		NetArray prediction = new NetArray(0.0f, 0.0f);
+		NetArray prediction = new NetArray(1.0f, 0.0f);
 		
 		NetworkGraph pendulumGraph = new NetworkGraph("Observation", Color.RED, 1000);
 		NetworkGraph pendulumGraphPre = new NetworkGraph("Prediction", Color.BLUE, 1000);
@@ -80,5 +73,6 @@ public class PredictionDemo
 			
 			Util.delay(100);
 		}
+		
 	}
 }

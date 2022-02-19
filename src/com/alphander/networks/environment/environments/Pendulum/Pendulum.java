@@ -21,6 +21,8 @@ public class Pendulum extends Environment
 	public float theta;
 	public float vel;
 	float t = 0f;
+	
+	public float thetaScale = 90f, velScale = 4f;
 
 	public Pendulum(String name, float theta, float vel)
 	{
@@ -54,7 +56,7 @@ public class Pendulum extends Environment
 	@Override
 	public NetArray getState()
 	{
-		return new NetArray(((float) Math.toDegrees(theta) - 90f), (float) vel);
+		return new NetArray(((float) Math.toDegrees(theta) - 90f) / thetaScale, vel / velScale);
 	}
 	@Override
 	public float getReward()

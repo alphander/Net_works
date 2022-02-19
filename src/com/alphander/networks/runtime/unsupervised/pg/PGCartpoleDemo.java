@@ -18,18 +18,22 @@ public class PGCartpoleDemo
 	//This uses the policy gradient theorem.
 	public static void main(String[] args) 
 	{	
-		float rewardThresh = 500f;
+		float rewardThresh = 600f;
 		int iterations = 10_000;
 		
 		//Environment setup
 		Cartpole env = new Cartpole();
+		env.thetaScale = 90f;
+		env.thetaVelocityScale = 4f;
+		env.posScale = 100f;
+		env.velocityScale = 1f;
 		
 		//Actor setup
 		DeepNet actor = new DeepNet(new int[] {env.observationSpace, 64, 64, 16, env.actionSpace});
 		actor.name = "Actor";
 		actor.weightDecay = 0.00001f;
-		actor.stepWeights = 0.00033f;
-		actor.stepBiases = 0.00033f;
+		actor.stepWeights = 0.0033f;
+		actor.stepBiases = 0.0033f;
 		actor.lossFunction = new NoLoss();
 		
 		actor.setActivator(0, new ReLU());

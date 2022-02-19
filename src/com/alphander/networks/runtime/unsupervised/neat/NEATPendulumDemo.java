@@ -18,6 +18,8 @@ public class NEATPendulumDemo
 		
 		//Actor/Environment setup
 		Pendulum env = new Pendulum();
+		env.thetaScale = 90f;
+		env.velScale = 4f;
 		NEATNet actor = new NEATNet(env.observationSpace, env.actionSpace);
 		
 		//Reinforcement learning agent setup

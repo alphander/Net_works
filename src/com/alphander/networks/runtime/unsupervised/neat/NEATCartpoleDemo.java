@@ -18,6 +18,10 @@ public class NEATCartpoleDemo
 		
 		//Actor/Environment setup
 		Cartpole env = new Cartpole();
+		env.thetaScale = 90f;
+		env.thetaVelocityScale = 4f;
+		env.posScale = 100f;
+		env.velocityScale = 1f;
 		NEATNet actor = new NEATNet(env.observationSpace, env.actionSpace);
 		
 		//Reinforcement learning agent setup

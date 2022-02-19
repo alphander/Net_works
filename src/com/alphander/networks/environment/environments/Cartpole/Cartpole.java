@@ -12,7 +12,7 @@ public class Cartpole extends Environment
     public float airResistance = 0.05f;
     public float cartAcceleration = 400f;
     public float poleCartAuthority = 10f;//In place of masses
-    public float cartPoleAuthority = 0.1f;//In place of masses
+    private float cartPoleAuthority = 1f / poleCartAuthority;//In place of masses
     public float gravity = -9.80665f;
     public float radius = 20.0f;
     public int stepSize = 4;
@@ -29,6 +29,8 @@ public class Cartpole extends Environment
     float pos;
     float velocity;
     public float t;
+    
+    public float thetaScale = 1f, thetaVelocityScale, posScale, velocityScale;
     
     public Cartpole(String name, float theta, float thetaVelocity)
     {
@@ -62,7 +64,7 @@ public class Cartpole extends Environment
     @Override
 	public NetArray getState()
 	{
-    	return new NetArray(theta, thetaVelocity, pos, velocity);
+    	return new NetArray(theta / thetaScale, thetaVelocity / thetaVelocityScale, pos / posScale, velocity / velocityScale);
 	}
 	@Override
 	public void reset()
