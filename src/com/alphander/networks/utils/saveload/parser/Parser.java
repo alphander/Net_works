@@ -24,6 +24,7 @@ public class Parser
 	private static final char pause = ',';
 	private static final String nextLine = "";
 	private static final String indent = "";
+	private static final char string = '"';
 	private static final char[] ignore = {' ', '\n', '\t'};
 	private static final char[] stop = {'{', ':', '}', '[', ']', ','};
 	
@@ -61,13 +62,13 @@ public class Parser
 		str += dictEnter + nextLine;
 		indents += 1;
 		boolean first = true;
-		for(Entry<Leaf, Part> entry : dict)
+		for(Entry<String, Part> entry : dict)
 		{
 			if(first)
 				first = false;
 			else
 				str += pause + nextLine;
-			part(entry.getKey());
+			str += string + entry.getKey() + string;
 			str += dictPause;
 			part(entry.getValue());
 		}
@@ -136,8 +137,7 @@ public class Parser
 		while(true)
 		{	
 			search();
-			Leaf key = leaf();
-			if(key.getType() != Type.String) return null;
+			String key = leaf().getString();
 			
 			char c = chars[index];
 			if(c != dictPause) return null;
