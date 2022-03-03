@@ -54,8 +54,6 @@ public class FullNetworkDemo
 			graph.addData(net.getError());
 		}
 		Util.print("Final Error: [" + net.getError() + "]");
-	
-		Util.save(net);//Saving network!
 		
 		//Testing the network
 		Util.test(net);

@@ -59,7 +59,7 @@ public class LoadDeepnet
 		List l = (List) in.get("activators");
 		Layer[] layers = net.getLayers();
 		for(int i = 0; i < layers.length; i++)
-			layers[i].activator = FileHelper.getActivation(((Leaf) l.get(i)).getString());		
+			layers[i].activator = FileHelper.getActivation(((Leaf) l.get(i)).get());		
 	}
 	
 	public static void weights(DeepNet net, Dict in)

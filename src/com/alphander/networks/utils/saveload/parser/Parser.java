@@ -137,7 +137,7 @@ public class Parser
 		while(true)
 		{	
 			search();
-			String key = leaf().getString();
+			String key = leaf().get();
 			
 			char c = chars[index];
 			if(c != dictPause) return null;
