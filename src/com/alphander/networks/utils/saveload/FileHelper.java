@@ -1,4 +1,4 @@
-package com.alphander.networks.utils;
+package com.alphander.networks.utils.saveload;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.alphander.networks.network.activation.Activator;
 import com.alphander.networks.network.loss.LossFunction;
+import com.alphander.networks.network.neatnet.mutation.Mutation;
 
 class FileHelper
 {
@@ -32,6 +33,26 @@ class FileHelper
 		catch (FileNotFoundException e) 
 		{}
 		return f;
+	}
+	
+	public static File getFile(String dir)
+	{
+		File file = new File(dir);
+		file.mkdir();
+		return file;
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static Mutation getMutation(String string)
+	{
+		try
+		{
+			return (Mutation) Class.forName(string).newInstance();
+		} 
+		catch (Exception e)
+		{
+			return null;
+		}
 	}
 	
 	@SuppressWarnings("deprecation")

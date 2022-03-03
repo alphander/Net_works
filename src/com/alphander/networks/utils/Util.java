@@ -5,39 +5,59 @@ import java.util.Scanner;
 
 import com.alphander.networks.network.Network;
 import com.alphander.networks.network.deepnet.DeepNet;
+import com.alphander.networks.network.neatnet.NEATNet;
+import com.alphander.networks.utils.saveload.LoadDeepnet;
+import com.alphander.networks.utils.saveload.SaveDeepnet;
+import com.alphander.networks.utils.saveload.SaveNEATNet;
+import com.alphander.networks.utils.saveload.LoadNEATNet;
 
 public class Util
 {
-	public static void save(DeepNet net)
+	public static final String defaultSave = "Saves";
+
+	public static void save(Network net)
 	{
-		System.out.println("...Saving network...");
-		SaveDeepnet.saveNetwork(net, "SavedNetworks");
+		save(net, defaultSave);
 	}
-	public static void save(DeepNet net, String dir)
+	
+	public static void save(Network net, String dir)
 	{
-		System.out.println("...Saving network...");
-		SaveDeepnet.saveNetwork(net, dir);
+		Util.print("...Saving network...");
+		if(net instanceof DeepNet)
+			SaveDeepnet.saveNetwork((DeepNet) net, dir);
+		if(net instanceof NEATNet)
+			SaveNEATNet.saveNetwork((NEATNet) net, dir);
 	}
 	
 	public static DeepNet load(DeepNet backup)
 	{
-		System.out.println("...Loading network...");
-		DeepNet net =  LoadDeepnet.loadNetwork("SavedNetworks", backup.name);
-		
-		if(net == null) return backup;
-		
-		return net;
+		return load(backup, defaultSave);
 	}
+	
 	public static DeepNet load(DeepNet backup, String dir)
 	{
-		System.out.println("...Loading network...");
-		DeepNet net =  LoadDeepnet.loadNetwork(dir, backup.name);
+		Util.print("...Loading network...");
+		DeepNet net = LoadDeepnet.loadNetwork(dir, backup.getName());
 		
-		if(net == null) return backup;
-		
+		if(net == null) 
+			return backup;
 		return net;
 	}
 	
+	public static NEATNet load(NEATNet backup)
+	{
+		return load(backup, defaultSave);
+	}
+	
+	public static NEATNet load(NEATNet backup, String dir)
+	{
+		Util.print("...Loading network...");
+		NEATNet net = LoadNEATNet.loadNetwork(dir, backup.getName());
+		
+		if(net == null) 
+			return backup;
+		return net;
+	}
 	
 	@SuppressWarnings("resource")
 	public static void test(Network net)
@@ -51,10 +71,10 @@ public class Util
 			float[] in = new float[str.length];
 			for(int i = 0; i < in.length; i++)
 				in[i] = Float.parseFloat(str[i]);
-			System.out.println("" + Arrays.toString(net.run(new NetArray(in)).array()));
+			Util.print("" + Arrays.toString(net.run(new NetArray(in)).array()));
 		}
 		else
-			System.out.println("Wrong size! Input size of " + net.getInput().length() + " only!");
+			Util.print("Wrong size! Input size of " + net.getInput().length() + " only!");
 		
 		test(net);
 	}

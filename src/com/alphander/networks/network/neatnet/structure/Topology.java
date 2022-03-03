@@ -103,7 +103,7 @@ public class Topology
         	for(int node : inputs[i])
 	        {
 	        	network[i][j] = node;
-	        	Link link = links.get(Link.hash(i, node));
+	        	Link link = links.get(Link.getHash(i, node));
 	        	if(link.enabled)
 	        		weights[i][j] = link.weight;
 	        	j++;

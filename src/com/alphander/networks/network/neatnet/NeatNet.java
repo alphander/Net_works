@@ -19,14 +19,13 @@ import com.alphander.networks.utils.NetArray;
 
 public class NEATNet implements Network
 {
+	public String name = "NEATNet";
 	public int population = 50;
 	public float speciesThresh = 4f;
 	public float deathRate = 0.3f;
-	private float repopTypeThresh = 0.4f;;
-	private Random random = new Random();
+	public float repopTypeThresh = 0.4f;;
 
-	int inputDims, outputDims;
-	private float[] inputs, outputs;
+	public int inputDims, outputDims;
 	public Activator activator = new Tanh();
 	public Mutation[] mutations = new Mutation[] 
 	{
@@ -36,8 +35,11 @@ public class NEATNet implements Network
 		new WeightRandomMutation(0.2f),
 		new ToggleMutation(0.01f),
 	};
-	private ArrayList<Genome> genomes = new ArrayList<Genome>();
+	public ArrayList<Genome> genomes = new ArrayList<Genome>();
 
+	private float[] inputs, outputs;
+	private Random random = new Random();
+	
 	private Topology current;
 	private int index = 0;
 	int generations = 0;
@@ -76,6 +78,12 @@ public class NEATNet implements Network
 	public NetArray getOutput()
 	{
 		return new NetArray(outputs);
+	}
+	
+	@Override
+	public String getName()
+	{
+		return name;
 	}
 
 	public void setMutations(Mutation[] mutations)

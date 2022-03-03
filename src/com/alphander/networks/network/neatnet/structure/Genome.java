@@ -12,8 +12,8 @@ public class Genome implements Comparable<Genome>
 	public int numNodes = 0;
 	public int inputDims, outputDims;
 	public HashMap<Integer, Link> links;
-	public Mutation[] mutations;
-	public Activator activator;
+	private Mutation[] mutations;
+	private Activator activator;
 	public Topology topo;
 	private Random random = new Random();
 	
@@ -122,7 +122,7 @@ public class Genome implements Comparable<Genome>
 	
 	public boolean canLink(int a, int b)
 	{
-		boolean contains = links.containsKey(Link.hash(a, b));
+		boolean contains = links.containsKey(Link.getHash(a, b));
 		
 		boolean same = a == b;
 		

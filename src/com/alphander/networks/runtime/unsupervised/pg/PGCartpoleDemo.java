@@ -11,7 +11,7 @@ import com.alphander.networks.network.loss.lossfunctions.NoLoss;
 import com.alphander.networks.reinforce.agents.PGAgent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
-import com.alphander.networks.utils.Display.NetworkGraph;
+import com.alphander.networks.utils.display.NetworkGraph;
 
 public class PGCartpoleDemo 
 {

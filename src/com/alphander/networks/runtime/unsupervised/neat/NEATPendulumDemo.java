@@ -7,7 +7,7 @@ import com.alphander.networks.network.neatnet.NEATNet;
 import com.alphander.networks.reinforce.agents.NEATAgent;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
-import com.alphander.networks.utils.Display.NetworkGraph;
+import com.alphander.networks.utils.display.NetworkGraph;
 
 public class NEATPendulumDemo
 {

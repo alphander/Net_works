@@ -8,7 +8,7 @@ import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.loss.lossfunctions.MSE;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
-import com.alphander.networks.utils.Display.NetworkGraph;
+import com.alphander.networks.utils.display.NetworkGraph;
 
 public class FullNetworkDemo
 {	
@@ -29,7 +29,7 @@ public class FullNetworkDemo
 		net.setActivator(2, new Tanh());
 		
 		
-		net = Util.load(net, "FullNetwork");//Will return new network. If none, will return null.
+		net = Util.load(net);//Will return new network. If none, will return null.
 		
 		Util.hookSave(net);//Saves network if program shuts down
 		

@@ -59,12 +59,19 @@ public class DeepNet implements Network, Cloneable
 	{
 		return new NetArray(output.clone());
 	}
+	
 	@Override
 	public NetArray getInput()
 	{
 		return new NetArray(input.clone());
 	}
 	
+	@Override
+	public String getName()
+	{
+		return name;
+	}
+
 	@Override
 	public NetArray run(NetArray input)
 	{

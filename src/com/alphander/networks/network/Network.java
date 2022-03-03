@@ -8,4 +8,5 @@ public interface Network
 	public void train(NetArray in);
 	public NetArray getInput();
 	public NetArray getOutput();
+	public String getName();
 }

@@ -1,4 +1,4 @@
-package com.alphander.networks.utils.Display;
+package com.alphander.networks.utils.display;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

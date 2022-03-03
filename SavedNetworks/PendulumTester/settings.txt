@@ -1,5 +1,0 @@
-weightDecay:1.0E-5
-stepWeights:0.033
-stepBiases:0.0033
-lossFunction:com.alphander.networks.network.loss.lossfunctions.MSE
-size:2,32,32,16,2

@@ -9,6 +9,11 @@ public abstract class Activator
 
 	public String getName()
 	{
-		return this.getClass().getName();
+		return this.getClass().getTypeName();
+	}
+	
+	public String getPackage()
+	{
+		return this.getClass().getPackageName();
 	}
 }

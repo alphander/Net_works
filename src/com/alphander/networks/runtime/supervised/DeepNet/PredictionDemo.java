@@ -5,7 +5,7 @@ import com.alphander.networks.environment.environments.pendulum.Pendulum;
 import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.utils.NetArray;
 import com.alphander.networks.utils.Util;
-import com.alphander.networks.utils.Display.NetworkGraph;
+import com.alphander.networks.utils.display.NetworkGraph;
 
 public class PredictionDemo
 {
