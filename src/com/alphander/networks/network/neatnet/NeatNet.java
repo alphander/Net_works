@@ -41,7 +41,7 @@ public class NEATNet implements Network
 	private Random random = new Random();
 	
 	private Topology current;
-	private int index = 0;
+	public int index = 0;
 	int generations = 0;
 
 	public NEATNet(int inputDims, int outputDims)
@@ -54,6 +54,23 @@ public class NEATNet implements Network
 		for(int i = 0; i < population; i++)
 			genomes.add(new Genome(activator, mutations, inputDims, outputDims));
 		this.current = genomes.get(0).topo;
+	}
+	
+	public NEATNet(String name, int inputDims, int outputDims, float deathRate, int population, float repopTypeThresh, 
+		float speciesThresh, Activator activator, Mutation[] mutations, ArrayList<Genome> genomes, int index)
+	{
+		this.name = name;
+		this.inputDims = inputDims;
+		this.outputDims = outputDims;
+		this.deathRate = deathRate;
+		this.population = population;
+		this.repopTypeThresh = repopTypeThresh;
+		this.speciesThresh = speciesThresh;
+		this.activator = activator;
+		this.mutations = mutations;
+		this.genomes = genomes;
+		this.current = genomes.get(index).topo;
+		this.index = index;
 	}
 
 	@Override

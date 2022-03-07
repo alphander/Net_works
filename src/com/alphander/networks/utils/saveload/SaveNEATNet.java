@@ -1,6 +1,5 @@
 package com.alphander.networks.utils.saveload;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,6 +42,7 @@ public class SaveNEATNet
 		d.put("repoptype thresh", net.repopTypeThresh);
 		d.put("species thresh", net.speciesThresh);
 		d.put("activator", net.activator.getName());
+		d.put("index", net.index);
 		
 		List mutations = new List();
 		for(Mutation mutation : net.mutations)

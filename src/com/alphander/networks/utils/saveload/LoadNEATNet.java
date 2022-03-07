@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.alphander.networks.network.activation.Activator;
-import com.alphander.networks.network.deepnet.DeepNet;
 import com.alphander.networks.network.neatnet.NEATNet;
 import com.alphander.networks.network.neatnet.mutation.Mutation;
 import com.alphander.networks.network.neatnet.structure.Genome;
@@ -32,50 +31,44 @@ public class LoadNEATNet
 			
 			return loadNEATNet(d);
 			
-		} catch (Exception e) {			throw new IllegalArgumentException();}
+		} catch (Exception e) {	return null;}
 	}
 	
 	private static NEATNet loadNEATNet(Dict d) throws Exception
 	{
-		String name = ((Leaf)d.get("name")).getString();
-		int inputDims = (int) ((Leaf)d.get("input dims")).getNumber();
-		int outputDims = (int) ((Leaf)d.get("output dims")).getNumber();
-		float deathRate = (float) ((Leaf)d.get("death rate")).getNumber();
-		int population = (int) ((Leaf)d.get("population")).getNumber();
-		float repopTypeThresh = (float) ((Leaf)d.get("repoptype thresh")).getNumber();
-		float speciesThresh = (float) ((Leaf)d.get("species thresh")).getNumber();
-		Activator activator = FileHelper.getActivation(((Leaf)d.get("activator")).getString());
+		String name = ((Leaf) d.get("name")).getString();
+		int inputDims = (int) ((Leaf) d.get("input dims")).getNumber();
+		int outputDims = (int) ((Leaf) d.get("output dims")).getNumber();
+		float deathRate = (float) ((Leaf) d.get("death rate")).getNumber();
+		int population = (int) ((Leaf) d.get("population")).getNumber();
+		float repopTypeThresh = (float) ((Leaf) d.get("repoptype thresh")).getNumber();
+		float speciesThresh = (float) ((Leaf) d.get("species thresh")).getNumber();
+		Activator activator = FileHelper.getActivation(((Leaf) d.get("activator")).getString());
+		int index = (int) ((Leaf) d.get("index")).getNumber();
 		
 		List m = (List) d.get("mutations");
 		Mutation[] mutations = new Mutation[m.size()];
 		for(int i = 0; i < m.size(); i++)
 			mutations[i] = loadMutation((Dict) m.get(i));
 		
-		NEATNet net = new NEATNet(inputDims, outputDims);
-		net.name = name;
-		net.deathRate = deathRate;
-		net.population = population;
-		net.repopTypeThresh = repopTypeThresh;
-		net.speciesThresh = speciesThresh;
-		net.activator = activator;
-		net.mutations = mutations;
-		
 		List g = (List) d.get("genomes");
 		ArrayList<Genome> genomes = new ArrayList<Genome>();
 		for(Part genome : g)
-			genomes.add(loadGenome(net, (Dict) genome));
-		net.genomes = genomes;
+			genomes.add(loadGenome(activator, mutations, inputDims, outputDims, (Dict) genome));
+		
+		NEATNet net = new NEATNet(name, inputDims, outputDims, deathRate, population, 
+				repopTypeThresh, speciesThresh, activator, mutations, genomes, index);
 
 		return net;
 	}
 	
-	private static Genome loadGenome(NEATNet net, Dict dict)
+	private static Genome loadGenome(Activator activator, Mutation[] mutations, int inputDims, int outputDims, Dict dict)
 	{
 		int numNodes = (int) ((Leaf)dict.get("nodes")).getNumber();
 		float score = (float) ((Leaf)dict.get("score")).getNumber();
 		HashMap<Integer, Link> links = loadLinks((List) dict.get("links"));
 		
-		return new Genome(net, links, numNodes, score);
+		return new Genome(activator, mutations, links, numNodes, score, inputDims, outputDims);
 	}
 	
 	private static Mutation loadMutation(Dict dict) throws Exception

@@ -21,6 +21,7 @@ public class NEATPendulumDemo
 		env.thetaScale = 90f;
 		env.velScale = 4f;
 		NEATNet actor = new NEATNet(env.observationSpace, env.actionSpace);
+		actor.name = "NEATPendulum";
 		
 		//Reinforcement learning agent setup
 		NEATAgent agent = new NEATAgent(env, actor);

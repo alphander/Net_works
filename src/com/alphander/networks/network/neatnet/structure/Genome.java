@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Random;
 
 import com.alphander.networks.network.activation.Activator;
-import com.alphander.networks.network.neatnet.NEATNet;
 import com.alphander.networks.network.neatnet.mutation.Mutation;
 
 public class Genome implements Comparable<Genome>
@@ -31,25 +30,14 @@ public class Genome implements Comparable<Genome>
 		this.topo = new Topology(this, activator);
 	}
 	
-	public Genome(NEATNet net, HashMap<Integer, Link> links, int numNodes, float score)
-	{
-		this.links = links;
-		this.mutations = net.mutations;
-		this.inputDims = net.inputDims;
-		this.outputDims = net.outputDims;
-		this.numNodes = numNodes;
-		this.activator = net.activator;
-		this.score = score;
-		this.topo = new Topology(this, activator);
-	}
-	
-	private Genome(Activator activator, Mutation[] mutations, HashMap<Integer, Link> links, int numNodes, int inputDims, int outputDims)
+	public Genome(Activator activator, Mutation[] mutations, HashMap<Integer, Link> links, int numNodes, float score, int inputDims, int outputDims)
 	{
 		this.links = links;
 		this.mutations = mutations;
 		this.inputDims = inputDims;
 		this.outputDims = outputDims;
 		this.numNodes = numNodes;
+		this.score = score;
 		this.activator = activator;
 		this.topo = new Topology(this, activator);
 	}
@@ -118,14 +106,14 @@ public class Genome implements Comparable<Genome>
 		
 		int numNodes = Math.max(this.numNodes, parent.numNodes);
 		
-		return new Genome(activator, mutations, genome, numNodes, inputDims, outputDims);
+		return new Genome(activator, mutations, genome, numNodes, 0f, inputDims, outputDims);
 	}
 	
 	@SuppressWarnings("unchecked")
 	public Genome mutate()
 	{
 		HashMap<Integer, Link> links = (HashMap<Integer, Link>) this.links.clone();
-		Genome genome = new Genome(activator, mutations, links, numNodes, inputDims, outputDims);
+		Genome genome = new Genome(activator, mutations, links, numNodes, 0f, inputDims, outputDims);
 		
 		for(Mutation mutation : mutations)
 			mutation.mutate(genome);

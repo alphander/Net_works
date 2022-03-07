@@ -25,7 +25,9 @@ public class PGPendulumDemo
 		Pendulum env = new Pendulum();
 
 		DeepNet actor = new DeepNet(new int[] {env.observationSpace, 32, 64, 32, 16, 16, env.actionSpace});
-		actor.stepWeights = 0.0033f;
+		actor.name = "PGPendulum";
+		actor.weightDecay = 0.000001f;
+		actor.stepWeights = 0.00033f;
 		actor.stepBiases = 0.00033f;
 		actor.lossFunction = new NoLoss();
 

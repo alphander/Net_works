@@ -1,0 +1,3045 @@
+{
+	"name": "NEATCartpole",
+	"input dims": 4.0,
+	"output dims": 2.0,
+	"death rate": 0.30000001192092896,
+	"population": 50.0,
+	"repoptype thresh": 0.4000000059604645,
+	"species thresh": 4.0,
+	"activator": "Tanh",
+	"index": 0.0,
+	"mutations": [
+		{
+			"mutation": "LinkMutation",
+			"probability": 0.009999999776482582
+		},
+		{
+			"mutation": "NodeMutation",
+			"probability": 0.10000000149011612
+		},
+		{
+			"mutation": "WeightShiftMutation",
+			"probability": 0.20000000298023224
+		},
+		{
+			"mutation": "WeightRandomMutation",
+			"probability": 0.20000000298023224
+		},
+		{
+			"mutation": "ToggleMutation",
+			"probability": 0.009999999776482582
+		}
+	],
+	"genomes": [
+		{
+			"id": "575593575",
+			"score": 89.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "346861221",
+			"score": 63.0,
+			"nodes": 8.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				}
+			]
+		},
+		{
+			"id": "1188392295",
+			"score": 25.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "226710952",
+			"score": 32.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1509563803",
+			"score": 46.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "684874119",
+			"score": 31.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1157740463",
+			"score": 121.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "131081",
+					"weight": 0.8687535524368286,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1379435698",
+			"score": 26.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1529306539",
+			"score": 72.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1635985705",
+			"score": 50.0,
+			"nodes": 9.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "695682681",
+			"score": 44.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1073502961",
+			"score": 60.0,
+			"nodes": 8.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				}
+			]
+		},
+		{
+			"id": "1582797472",
+			"score": 35.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "644166178",
+			"score": 61.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.8878996968269348,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "892529689",
+			"score": 36.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1757676444",
+			"score": 33.0,
+			"nodes": 8.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "182738614",
+			"score": 113.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.8878996968269348,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "94345706",
+			"score": 30.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "670035812",
+			"score": 27.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1870647526",
+			"score": 77.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1204167249",
+			"score": 40.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1047503754",
+			"score": 49.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "131081",
+					"weight": 0.8687535524368286,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.2872283160686493,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1722023916",
+			"score": 23.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "2009787198",
+			"score": 54.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "32017212",
+			"score": 100.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1121454968",
+			"score": 22.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1006485584",
+			"score": 61.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "466505482",
+			"score": 99.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "131081",
+					"weight": 0.8687535524368286,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1580893732",
+			"score": 26.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1547425104",
+			"score": 23.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "152134087",
+			"score": 47.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1615780336",
+			"score": 78.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1783593083",
+			"score": 107.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1750905143",
+			"score": 25.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1782704802",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "2094411587",
+			"score": 0.0,
+			"nodes": 8.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1833638914",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1620303253",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "90320863",
+			"score": 0.0,
+			"nodes": 8.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1216590855",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": -0.97369784116745,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "2107447833",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.8878996968269348,
+					"enabled": true
+				},
+				{
+					"hash": "5",
+					"weight": -0.867786705493927,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "60559178",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "131081",
+					"weight": 0.8687535524368286,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.2872283160686493,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "395629617",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1122134344",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.6764026880264282,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1471868639",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "876563773",
+			"score": 0.0,
+			"nodes": 8.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": 0.7552366256713867,
+					"enabled": true
+				},
+				{
+					"hash": "327687",
+					"weight": -0.21746422350406647,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				}
+			]
+		},
+		{
+			"id": "87765719",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1413653265",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "131081",
+					"weight": 0.8687535524368286,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "1418621776",
+			"score": 0.0,
+			"nodes": 10.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "327689",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "446073433",
+			"score": 0.0,
+			"nodes": 11.0,
+			"links": [
+				{
+					"hash": "393223",
+					"weight": -0.6054430603981018,
+					"enabled": false
+				},
+				{
+					"hash": "327687",
+					"weight": 0.7479840517044067,
+					"enabled": true
+				},
+				{
+					"hash": "327686",
+					"weight": 0.8184947967529297,
+					"enabled": true
+				},
+				{
+					"hash": "589834",
+					"weight": -0.766402542591095,
+					"enabled": true
+				},
+				{
+					"hash": "131078",
+					"weight": 0.5334474444389343,
+					"enabled": false
+				},
+				{
+					"hash": "131079",
+					"weight": 0.5090668797492981,
+					"enabled": true
+				},
+				{
+					"hash": "131077",
+					"weight": -0.6873923540115356,
+					"enabled": false
+				},
+				{
+					"hash": "196612",
+					"weight": -0.877959668636322,
+					"enabled": true
+				},
+				{
+					"hash": "131080",
+					"weight": 0.1610705703496933,
+					"enabled": true
+				},
+				{
+					"hash": "131081",
+					"weight": 0.8687535524368286,
+					"enabled": true
+				},
+				{
+					"hash": "327688",
+					"weight": -0.26451051235198975,
+					"enabled": true
+				},
+				{
+					"hash": "458761",
+					"weight": -0.5661500692367554,
+					"enabled": true
+				},
+				{
+					"hash": "458760",
+					"weight": -0.06767772883176804,
+					"enabled": true
+				},
+				{
+					"hash": "327690",
+					"weight": 0.38797858357429504,
+					"enabled": true
+				}
+			]
+		}
+	]
+}

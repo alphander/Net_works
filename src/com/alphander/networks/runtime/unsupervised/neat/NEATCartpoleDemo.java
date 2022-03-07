@@ -23,6 +23,7 @@ public class NEATCartpoleDemo
 		env.posScale = 100f;
 		env.velocityScale = 1f;
 		NEATNet actor = new NEATNet(env.observationSpace, env.actionSpace);
+		actor.name = "NEATCartpole";
 		actor = Util.load(actor);
 		
 		//Reinforcement learning agent setup

@@ -20,8 +20,6 @@ public class PredictionDemo
 		net.stepWeights = 0.033f;
 		net.stepBiases = 0.0033f;
 		
-		Util.hookSave(net);//Saves network if program shuts down.
-		
 		//Settings up environment!
 		Pendulum env = new Pendulum("Pendulum", 90.0f, 0.0f);
 		env.airResistance = 0.0f;
@@ -50,8 +48,6 @@ public class PredictionDemo
 			Util.printError(net);
 		}
 		Util.print("Final Error: [" + net.getError() + "]");
-		
-		Util.save(net);//Saving network
 		
 		//Running and comparing prediction!
 		NetArray prediction = new NetArray(1.0f, 0.0f);

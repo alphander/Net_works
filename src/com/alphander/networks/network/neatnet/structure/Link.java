@@ -27,7 +27,7 @@ public final class Link
 	
 	public static int getA(int hash)
 	{
-		return hash | 0x0000ffff;
+		return hash & 0x0000ffff;
 	}
 	
 	public static int getB(int hash)

@@ -18,7 +18,7 @@ public class FullNetworkDemo
 		
 		//Network Setup. These are values I found that work well.
 		DeepNet net = new DeepNet(new int[] {2, 16, 16, 2});
-		net.name = "FullNetwork";
+		net.name = "FullDemo";
 		net.weightDecay = 0.00001f;
 		net.stepWeights = 0.033f;
 		net.stepBiases = 0.0033f;
@@ -28,10 +28,7 @@ public class FullNetworkDemo
 		net.setActivator(1, new ReLU());
 		net.setActivator(2, new Tanh());
 		
-		
 		net = Util.load(net);//Will return new network. If none, will return backup.
-		
-		Util.hookSave(net);//Saves network if program shuts down
 		
 		NetworkGraph graph = new NetworkGraph("Error", Color.BLUE, 0);//Setting up graph
 		
