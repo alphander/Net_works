@@ -1,6 +1,5 @@
 package com.alphander.networks.utils.saveload;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,50 +15,53 @@ public class LoadDeepnet
 {
 	public static DeepNet loadNetwork(String dir, String name)
 	{
-		Path path = Paths.get(dir, name + ".json");
-		String data;
 		try {
-			data = Files.readString(path);
-		} catch (IOException e) { return null;}
-		Parser p = new Parser();
-		Dict d = (Dict) p.load(data);
-		
-		DeepNet network = settings(d);
-		activators(network, d);
-		weights(network, d);
-		biases(network, d);
-		
-		return network;
+			
+			Path path = Paths.get(dir, name + ".json");
+			String data = Files.readString(path);
+			
+			Parser p = new Parser();
+			
+			Dict d = (Dict) p.load(data);
+			
+			DeepNet net = loadDeepnet(d);
+			activators(net, d);
+			weights(net, d);
+			biases(net, d);
+			return net;
+		} catch (Exception e) {return null;}
 	}
 	
-	public static DeepNet settings(Dict in)
+	public static DeepNet loadDeepnet(Dict in) throws Exception
 	{
 		Dict d = (Dict) in.get("settings");
-		float stepWeights = (float) ((Leaf)d.get("stepWeights")).getNumber();
-		float stepBiases =  (float) ((Leaf)d.get("stepBiases")).getNumber();
-		float weightDecay =  (float) ((Leaf)d.get("weightDecay")).getNumber();
-		LossFunction lossFunction = FileHelper.getLossFunction(((Leaf)d.get("lossFunction")).get());
+		String name = ((Leaf) d.get("name")).getString();
+		float stepWeights = (float) ((Leaf) d.get("stepWeights")).getNumber();
+		float stepBiases = (float) ((Leaf) d.get("stepBiases")).getNumber();
+		float weightDecay = (float) ((Leaf) d.get("weightDecay")).getNumber();
+		LossFunction lossFunction = FileHelper.getLossFunction(((Leaf)d.get("lossFunction")).getString());
 		
 		List l = (List) d.get("size");
 		int[] size = new int[l.size()];
 		for(int i = 0; i < l.size(); i++)
-			size[i] = (int) ((Leaf)l.get(i)).getNumber();
+			size[i] = (int) ((Leaf) l.get(i)).getNumber();
 		
-		DeepNet network = new DeepNet(size);
-		network.stepWeights = stepWeights;
-		network.stepBiases = stepBiases;
-		network.weightDecay = weightDecay;
-		network.lossFunction = lossFunction;
+		DeepNet net = new DeepNet(size);
+		net.name = name;
+		net.stepWeights = stepWeights;
+		net.stepBiases = stepBiases;
+		net.weightDecay = weightDecay;
+		net.lossFunction = lossFunction;
 		
-		return network;
+		return net;
 	}
 	
-	public static void activators(DeepNet net, Dict in)
+	public static void activators(DeepNet net, Dict in) throws Exception
 	{
 		List l = (List) in.get("activators");
 		Layer[] layers = net.getLayers();
 		for(int i = 0; i < layers.length; i++)
-			layers[i].activator = FileHelper.getActivation(((Leaf) l.get(i)).get());		
+			layers[i].activator = FileHelper.getActivation(((Leaf) l.get(i)).getString());		
 	}
 	
 	public static void weights(DeepNet net, Dict in)

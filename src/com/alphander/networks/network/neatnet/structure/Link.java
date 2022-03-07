@@ -16,7 +16,7 @@ public final class Link
 		this.hash = getHash(a, b);
 	}
 	
-	public Link(float weight, boolean enabled, int hash)
+	public Link(int hash, float weight, boolean enabled)
 	{
 		this.a = getA(hash);
 		this.b = getB(hash);

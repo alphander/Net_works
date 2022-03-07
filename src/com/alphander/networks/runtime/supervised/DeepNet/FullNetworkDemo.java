@@ -14,7 +14,7 @@ public class FullNetworkDemo
 {	
 	public static void main(String[] args)
 	{
-		int iterations = 10_000;
+		int iterations = 100;
 		
 		//Network Setup. These are values I found that work well.
 		DeepNet net = new DeepNet(new int[] {2, 16, 16, 2});
@@ -29,7 +29,7 @@ public class FullNetworkDemo
 		net.setActivator(2, new Tanh());
 		
 		
-		net = Util.load(net);//Will return new network. If none, will return null.
+		net = Util.load(net);//Will return new network. If none, will return backup.
 		
 		Util.hookSave(net);//Saves network if program shuts down
 		
@@ -55,7 +55,10 @@ public class FullNetworkDemo
 		}
 		Util.print("Final Error: [" + net.getError() + "]");
 		
-		//Testing the network
+		//Saving network
+		Util.save(net);
+		
+		//Testing network
 		Util.test(net);
 	}
 }

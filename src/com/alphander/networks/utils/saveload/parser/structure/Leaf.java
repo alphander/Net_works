@@ -51,16 +51,9 @@ public class Leaf extends Part
 		this.value = str;
 	}
 	
-	public String get()
-	{
-		return value;
-	}
-	
 	public String getString()
 	{
-		if(this.type != Type.String) return null;
-		
-		return string + value + string;
+		return value;
 	}
 	
 	public double getNumber()
@@ -75,6 +68,13 @@ public class Leaf extends Part
 		if(this.type != Type.Boolean) throw new IllegalArgumentException();
 		
 		return Boolean.parseBoolean(value);
+	}
+	
+	public String get()
+	{
+		if(this.type != Type.String) return null;
+		
+		return string + value + string;
 	}
 	
 	public Type getType()
@@ -136,7 +136,7 @@ public class Leaf extends Part
 		{
 			Double d =  Double.parseDouble(str);
 			this.type = Type.Number;
-			value = str;
+			value = "" + d;
 			return d;
 		}
 		catch(NullPointerException | NumberFormatException e)
@@ -201,7 +201,7 @@ public class Leaf extends Part
 		Leaf leaf = new Leaf();
 		leaf.set(str);
 		if(leaf.stringIt() == null && leaf.numIt() == null && leaf.boolIt() == null && !leaf.isNone())
-			return null;
+			throw new IllegalArgumentException();
 		return leaf;	
 	}
 	

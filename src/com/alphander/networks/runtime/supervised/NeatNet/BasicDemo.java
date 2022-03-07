@@ -9,7 +9,7 @@ public class BasicDemo
 {
 	public static void main(String[] args)
 	{
-		int iterations = 10_000;
+		int iterations = 10;
 		NEATNet net = new NEATNet(2, 2);
 		
 		for(int i = 0; i < iterations; i++)
@@ -20,6 +20,8 @@ public class BasicDemo
 			
 			Util.print(array.string());
 		}
+		
+		Util.save(net);
 		
 		Util.test(net);
 	}

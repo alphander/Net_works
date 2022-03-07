@@ -12,7 +12,6 @@ public class DeepNet implements Network, Cloneable
 {
 	//Parameters and settings
 	public String name = "Network";
-	
 	public float stepWeights = 0.033f;
 	public float stepBiases = 0.0033f;
 	public float weightDecay = 0.000001f;

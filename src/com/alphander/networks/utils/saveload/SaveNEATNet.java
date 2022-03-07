@@ -1,45 +1,91 @@
 package com.alphander.networks.utils.saveload;
 
-import java.util.ArrayList;
-import java.util.Formatter;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import com.alphander.networks.network.neatnet.NEATNet;
+import com.alphander.networks.network.neatnet.mutation.Mutation;
 import com.alphander.networks.network.neatnet.structure.Genome;
 import com.alphander.networks.network.neatnet.structure.Link;
+import com.alphander.networks.utils.saveload.parser.Parser;
+import com.alphander.networks.utils.saveload.parser.structure.Dict;
+import com.alphander.networks.utils.saveload.parser.structure.List;
 
 public class SaveNEATNet
 {
 	public static void saveNetwork(NEATNet net, String dir)
 	{
-		saveNEATNet(net, dir + "\\");
-		ArrayList<Genome> genomes = net.genomes;
-		for(int i = 0; i < net.genomes.size(); i++)
-		{
-			Genome genome = genomes.get(i);
-			saveGenome(genome, dir + "\\genomes\\genome" + i + ".txt");
-		}
+		Dict d = saveNEATNet(net);
+		Parser p = new Parser();
+		String data = p.save(d);
+		
+		Path path = Paths.get(dir);
+		Path file = Paths.get(dir, net.getName() + ".json");
+		
+		try { 
+			Files.createDirectories(path);
+			Files.writeString(file, data);
+		} catch(IOException e) {throw new IllegalArgumentException();}
 	}
 	
-	private static void saveNEATNet(NEATNet net, String dir)
+	private static Dict saveNEATNet(NEATNet net)
 	{
-		Formatter f = FileHelper.getFormatter(dir);
+		Dict d = new Dict();
 		
-		f.format("name : " + net.name);
-		f.format("population : " + net.population);
-		f.format("speciesThresh : " + net.speciesThresh);
-		f.format("deathRate : " + net.deathRate);
-		f.format("repopTypeThresh : " + net.repopTypeThresh);
+		d.put("name", net.name);
+		d.put("input dims", net.inputDims);
+		d.put("output dims", net.outputDims);
+		d.put("death rate", net.deathRate);
+		d.put("population", net.population);
+		d.put("repoptype thresh", net.repopTypeThresh);
+		d.put("species thresh", net.speciesThresh);
+		d.put("activator", net.activator.getName());
 		
-		f.close();
+		List mutations = new List();
+		for(Mutation mutation : net.mutations)
+			mutations.add(saveMutation(mutation));
+		d.put("mutations", mutations);
+		
+		List genomes = new List();
+		for(Genome genome : net.genomes)
+			genomes.add(saveGenome(genome));
+		d.put("genomes", genomes);
+		
+		return d;
 	}
 	
-	private static void saveGenome(Genome genome, String dir)
+	private static Dict saveGenome(Genome genome)
 	{
-		Formatter f = FileHelper.getFormatter(dir);
+		Dict d = new Dict();
+		d.put("id", "" + genome.hashCode());
+		d.put("score", genome.score);
+		d.put("nodes", genome.numNodes);
 		
+		List links = new List();
 		for(Link link : genome.links.values())
-			f.format("" + link.hashCode());
+			links.add(saveLink(link));
 		
-		f.close();
+		d.put("links", links);
+		return d;
+	}
+	
+	private static Dict saveMutation(Mutation mutation)
+	{
+		Dict d = new Dict();
+		d.put("mutation", mutation.getName());
+		d.put("probability", mutation.probability);
+		return d;
+	}
+	
+	private static Dict saveLink(Link link)
+	{
+		Dict d = new Dict();
+		d.put("hash", "" + link.hashCode());
+		d.put("weight", link.weight);
+		d.put("enabled", link.enabled);
+		return d;
 	}
 }

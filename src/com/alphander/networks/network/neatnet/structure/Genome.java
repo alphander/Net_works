@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import com.alphander.networks.network.activation.Activator;
+import com.alphander.networks.network.neatnet.NEATNet;
 import com.alphander.networks.network.neatnet.mutation.Mutation;
 
 public class Genome implements Comparable<Genome>
@@ -27,6 +28,18 @@ public class Genome implements Comparable<Genome>
 		this.outputDims = outputDims;
 		this.numNodes = inputDims + outputDims;
 		this.activator = activator;
+		this.topo = new Topology(this, activator);
+	}
+	
+	public Genome(NEATNet net, HashMap<Integer, Link> links, int numNodes, float score)
+	{
+		this.links = links;
+		this.mutations = net.mutations;
+		this.inputDims = net.inputDims;
+		this.outputDims = net.outputDims;
+		this.numNodes = numNodes;
+		this.activator = net.activator;
+		this.score = score;
 		this.topo = new Topology(this, activator);
 	}
 	

@@ -1,5 +1,6 @@
 package com.alphander.networks.utils;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -14,10 +15,15 @@ import com.alphander.networks.utils.saveload.LoadNEATNet;
 public class Util
 {
 	public static final String defaultSave = "Saves";
+	public static final String defaultNeat = "NEAT Networks";
+	public static final String defaultDeep = "Deep Networks";
 
 	public static void save(Network net)
 	{
-		save(net, defaultSave);
+		if(net instanceof DeepNet)
+			save(net, defaultSave + File.separator + defaultDeep);
+		if(net instanceof NEATNet)
+			save(net, defaultSave + File.separator + defaultNeat);
 	}
 	
 	public static void save(Network net, String dir)
@@ -31,7 +37,7 @@ public class Util
 	
 	public static DeepNet load(DeepNet backup)
 	{
-		return load(backup, defaultSave);
+		return load(backup, defaultSave + File.separator + defaultDeep);
 	}
 	
 	public static DeepNet load(DeepNet backup, String dir)
@@ -40,13 +46,17 @@ public class Util
 		DeepNet net = LoadDeepnet.loadNetwork(dir, backup.getName());
 		
 		if(net == null) 
+		{
+			Util.print("Failed loading network!");
+			Util.print("...Using backup...");
 			return backup;
+		}
 		return net;
 	}
 	
 	public static NEATNet load(NEATNet backup)
 	{
-		return load(backup, defaultSave);
+		return load(backup, defaultSave + File.separator + defaultNeat);
 	}
 	
 	public static NEATNet load(NEATNet backup, String dir)
@@ -55,7 +65,11 @@ public class Util
 		NEATNet net = LoadNEATNet.loadNetwork(dir, backup.getName());
 		
 		if(net == null) 
+		{
+			Util.print("Failed loading network!");
+			Util.print("...Using backup...");
 			return backup;
+		}
 		return net;
 	}
 	

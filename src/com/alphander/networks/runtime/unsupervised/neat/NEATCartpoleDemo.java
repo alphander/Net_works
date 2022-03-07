@@ -23,6 +23,7 @@ public class NEATCartpoleDemo
 		env.posScale = 100f;
 		env.velocityScale = 1f;
 		NEATNet actor = new NEATNet(env.observationSpace, env.actionSpace);
+		actor = Util.load(actor);
 		
 		//Reinforcement learning agent setup
 		NEATAgent agent = new NEATAgent(env, actor);
@@ -48,6 +49,8 @@ public class NEATCartpoleDemo
 			
 			Util.print(i + " ---------------------------------------------------------- " + latestReward);
 		}
+		
+		Util.save(actor);
 		
 		NetworkGraph runGraph = new NetworkGraph("Running", Color.BLUE, 0);
 		

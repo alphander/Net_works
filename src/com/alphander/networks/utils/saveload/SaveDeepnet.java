@@ -16,7 +16,7 @@ public class SaveDeepnet
 	public static void saveNetwork(DeepNet net, String dir)
 	{	
 		Dict dict = new Dict();
-		dict.put("settings", settings(net));
+		dict.put("settings", saveDeepnet(net));
 		dict.put("activators", activators(net));
 		dict.put("weights", weights(net));
 		dict.put("biases", biases(net));
@@ -27,13 +27,16 @@ public class SaveDeepnet
 		Path path = Paths.get(dir);
 		Path file = Paths.get(dir, net.getName() + ".json");
 		
-		try { Files.createDirectories(path); Files.writeString(file, data);
+		try { 
+			Files.createDirectories(path); 
+			Files.writeString(file, data);
 		} catch(IOException e) {throw new IllegalArgumentException();}
 	}
 	
-	private static Dict settings(DeepNet net)
+	private static Dict saveDeepnet(DeepNet net)
 	{
 		Dict d = new Dict();
+		d.put("name", net.name);
 		d.put("weightDecay", net.weightDecay);
 		d.put("stepWeights", net.stepWeights);
 		d.put("stepBiases", net.stepBiases);
