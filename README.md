@@ -1,3 +1,3 @@
 # Net-works
  
-A Neural network library, include deep RL.
+A Neural network library, including deep RL.
